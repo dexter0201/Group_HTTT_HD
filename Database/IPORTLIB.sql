@@ -591,6 +591,61 @@ go
 
 Exec GetUsersByDepartments;
 
-	
+-- Thống kê số lượng độc giả theo khoa
+create procedure ReportUsersDepartments
+as
+	select Departments.DepartmentName, count(*) as CountUsers
+	from Users inner join Departments on Users.DepartmentId=Departments.DepartmentId 
+	group by Departments.DepartmentName;
+go
 
+
+-- Thống kê số lượng độc giả mượn sách theo năm
+create procedure ReportUsersLoan
+ as
+	select DATEPART(yyyy,Loans.DateCreated) as Year, COUNT(distinct(UserNo)) as CountUsers
+	from Loans inner join Users on Loans.UserId = Users.UserId
+	group by DATEPART(yyyy,Loans.DateCreated);
+ go
+
+ -- Thống kê các độc giả mượn sách theo từng năm
+ create procedure GetReportUsersLoanByYear
+ (
+	@year varchar(4)
+ )
+ as
+	select Users.UserNo,Users.FirstName,Users.LastName,C.CountLoan
+	from (select Users.UserNo,count(*) as CountLoan
+			from Users inner join Loans on Users.UserId = Loans.UserId
+			where DATEPART(yyyy,Loans.DateCreated) = @year
+			group by Loans.UserId,Users.UserNo
+			) as C inner join Users on C.UserNo = Users.UserNo
+	order by C.CountLoan DESC
+ go
+
+ -- Thống kê độc giả mượn sách theo các sơ sở
+create procedure ReportLoansPercent
+as
+	select Stores.StoreName as storename,(count(distinct Loans.LoanId) / CAST ((select count(distinct Loans.LoanId)
+																 from Loans inner join LoanDetails on Loans.LoanId = LoanDetails.LoanId
+																	inner join Books on LoanDetails.BookId = Books.BookId
+																	inner join Stores on Books.StoreId = Stores.StoreId) as decimal) * 100.00) as LoanPercent
+	from Loans inner join LoanDetails on Loans.LoanId = LoanDetails.LoanId
+		inner join Books on LoanDetails.BookId = Books.BookId
+		inner join Stores on Books.StoreId = Stores.StoreId
+	group by Stores.StoreName
+go
+ 
+-- Thống kê các độc giả trễ hẹn trả sách
+create procedure GetReportOutOfDateLoans
+as
+select Users.UserNo,Users.FirstName,Users.LastName,LoanDetails.DateLoan,LoanDetails.DatePay,Publications.Title,Books.NumberSpecific
+from	Users inner join Loans on Loans.UserId = Users.UserId
+		inner join LoanDetails on Loans.LoanId = LoanDetails.LoanId
+		inner join Books on LoanDetails.BookId = Books.BookId
+		inner join Stores on Books.StoreId = Stores.StoreId
+		inner join Publications on Publications.PublicationId = Books.PublicationId
+where Books.Status = 1 and LoanDetails.DatePay <= GETDATE()
+order by UserNo
+go
 
