@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <menu id="Reader" module="Phân hệ quản lý độc giả">
+    <item value="Thêm mới độc giả" url="/Reader/Create" />
+    <item value="Tìm kiếm độc giả" url="/Reader" />
+    <item value="In thẻ độc giả" url="/Reader/Print" />
+    <item value="Tạo báo cáo" url="/Reader/Report" />
+  </menu>
+  <menu id="Circulation" module="Phân hệ biên mục">
+    <item value="Mượn trả sách" url="/Circulation/CheckOut" />
+    <item value="Tìm kiếm độc giả" url="/Circulation" />
+    <item value="Thống kê độc giả" url="/Circulation/StatisticReader" />
+    <item value="Thống kê sách" url="/Circulation/StatisticBook" />
+    <item value="Thiết lập qui định mượn trả" url="/Circulation/Role" />
+  </menu>
+  <menu id="Supplier" module="Phân hệ bổ sung">
+    <item value="Quản lý nhà cung cấp" url="/Supplier">
+      <item value="Thêm mới" url="/Supplier/Create" />
+      <item value="Tìm kiếm" url="/Supplier" />
+    </item>
+    <item value="Quản lý ấn phẩm" url="/Publication" />
+    <item value="Quản lý nhãn" url="/" />
+    <item value="Quản lý số cá biệt" url="/" />
+  </menu>
+  <menu id="Publication" module="Phân hệ bổ sung">
+    <item value="Quản lý nhà cung cấp" url="/Supplier" />
+    <item value="Quản lý ấn phẩm" url="/Publication">
+      <item value="Thêm mới" url="/Publication/Create" />
+      <item value="Tìm kiếm" url="/Publication" />
+    </item>
+    <item value="Quản lý nhãn" url="/" />
+    <item value="Quản lý số cá biệt" url="/" />
+  </menu>
+  
+  <menu id="Book" module="Phân hệ biên mục">
+    <item value="Biên mục sách" url="/Book">
+      <item value="Thêm mới" url="/Book/Create" />
+      <item value="Tìm kiếm" url="/Book" />
+    </item>
+    <item value="Biên mục tác giả" url="/Author" />
+    <item value="Biên mục nhà xuất bản" url="/Publisher" />
+    <item value="Biên mục đề mục" url="/Topic" />
+  </menu>
+  
+  <menu id="Author" module="Phân hệ biên mục">
+    <item value="Biên mục sách" url="/Book" />
+    <item value="Biên mục tác giả" url="/Author">
+      <item value="Thêm mới" url="/Author/Create" />
+      <item value="Tìm kiếm" url="/Author" />
+    </item>
+    <item value="Biên mục nhà xuất bản" url="/Publisher" />
+    <item value="Biên mục đề mục" url="/Topic" />
+  </menu>
+  
+  <menu id="Publisher" module="Phân hệ biên mục">
+    <item value="Biên mục sách" url="/Supplier" />
+    <item value="Biên mục tác giả" url="/Author" />
+    <item value="Biên mục nhà xuất bản" url="/Publisher">
+      <item value="Thêm mới" url="/Publisher/Create" />
+      <item value="Tìm kiếm" url="/Publisher" />
+    </item>
+    <item value="Biên mục đề mục" url="/Topic" />
+  </menu>
+  <menu id="Topic" module="Phân hệ biên mục">
+    <item value="Biên mục sách" url="/Supplier" />
+    <item value="Biên mục tác giả" url="/Author" />
+    <item value="Biên mục nhà xuất bản" url="/Publisher" />
+    <item value="Biên mục đề mục" url="/Topic">
+      <item value="Thêm mới" url="/Topic/Create" />
+      <item value="Tìm kiếm" url="/Topic" />
+    </item>
+  </menu>
+</root>

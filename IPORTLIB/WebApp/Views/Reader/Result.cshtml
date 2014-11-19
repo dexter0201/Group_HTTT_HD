@@ -1,0 +1,15 @@
+﻿@model WebApp.Utility.UtilityUser
+<table class="table">
+    <tr><th>Họ tên</th><th>Tên</th><th>MSSV</th><th>Khoa</th><th>Edit</th><th>Delete</th></tr>
+    @foreach (var item in Model.Users)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.UserNo</td>
+            <td>@item.DepartmentName</td>
+            <td><a href="/Reader/Edit/@item.UserId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+            <td><a href="#"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+        </tr>
+    }
+</table>

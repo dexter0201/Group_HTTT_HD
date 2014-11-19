@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Quản lý nhà cung cấp";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Quản lý nhà cung cấp</h2>
+<form>
+Tìm kiếm: <input size="70" type="text" /><input type="submit" class="btn" value="Tìm"/>
+ </form>
+<br />
+<table class="table">
+    <tr><th>Tên nhà cung cấp</th><th>Địa chỉ</th><th>Thành phố</th><th>Quốc gia</th><th>Điện thoại</th><th>Email</th><th>Trang web</th><th>Edit</th><th>Delete</th></tr>
+    <tr>
+        <td>DHQG Hà Nội</td>
+        <td>Cầu giấy</td>
+        <td>Hà Nội</td>
+        <td>Việt Nam</td>
+        <td>01212 555 777</td>
+        <td>book@vnu.com</td>
+        <td><a href="http://www.vnu.edu.vn/">http://www.vnu.edu.vn/</a></td>
+        <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+    </tr>
+    <tr>
+        <td>o'reilly</td>
+        <td>1005 Gravenstein </td>
+        <td>Sebastopol  </td>
+        <td>Mỹ</td>
+        <td>777 888 22</td>
+        <td>oreilly@foxnews.com.</td>
+        <td><a href="http://www.oreilly.com/">http://www.oreilly.com/</a></td>
+        <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+    </tr>
+</table>
+

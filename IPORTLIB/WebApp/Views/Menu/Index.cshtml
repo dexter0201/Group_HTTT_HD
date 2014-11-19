@@ -1,0 +1,18 @@
+﻿@model IEnumerable<WebApp.Models.Item>
+<ul id="cat">
+@foreach (var item in Model)
+{
+     <li>
+        <a href="@item.Url">@item.Value</a>
+        @if (item.Items != null)
+        {
+            <ul>
+                @foreach (var child in item.Items)
+                {
+                    <li><a href="@child.Url">@child.Value</a></li>
+                }
+            </ul>
+        }
+     </li>
+}
+</ul>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Thêm đề mục mới";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@ViewBag.Title</h2>
+<table>
+    <table class="tbl">
+        <tr>
+            <td><span class="required">*</span>Tên đề mục</td>
+            <td colspan="3"><textarea rows="4" class="txtlarge"></textarea></td>
+        </tr>
+        <tr>
+            <td><span class="required">*</span>Tên viết tắt</td>
+            <td><input type="text" class="txtavg" /></td>
+        </tr>
+        <tr>
+            <td>Ghi chú</td>
+            <td colspan="3"><textarea rows="4" class="txtlarge"></textarea></td>
+        </tr>
+        <tr class="center">
+            <td colspan="4">
+                <input class="btn" type="submit" value="Lưu trữ" />
+                <input class="btn" type="reset" value="Nhập lại" />
+                <input class="btn" type="submit" value="Xóa" />
+            </td>
+        </tr>
+    </table>
+</table>

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Tìm kiếm độc giả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+    window.onload = function () {
+        var frm = document.forms['frm'];
+        frm.onsubmit = function () {
+            var xhr = new XMLHttpRequest();
+            var dept = document.getElementById('DepartmentId');
+            var prov = document.getElementById('ProvinceId');
+            var data = { DepartmentId: dept.value, ProvinceId: prov.value };
+            xhr.open('POST', '/Reader/Report');            
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('result').innerHTML = xhr.responseText;
+                }
+            }
+            xhr.send(JSON.stringify(data));
+            return false;
+        }
+    }
+</script>
+<h2>Report</h2>
+<form method="post" action="/Reader/Report" name="frm" class="frm">
+    <p><label>Khoa:</label>@Html.DropDownList("DepartmentId", String.Empty)</p>
+    <p><label>Tỉnh thành:</label>@Html.DropDownList("ProvinceId", String.Empty)</p>
+    <p><label>&nbsp;</label><input type="submit" value="Xem" /></p>
+</form>
+<div id="result"></div>
+

@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Thêm mới ấn phẩm";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@ViewBag.Title</h2>
+<br/>
+<table>
+    <tr>
+        <td><span class="required">*</span>Nhà cung cấp</td>
+        <td colspan="3"><input type="text" class="txtlarge" /></td>
+    </tr>
+    <tr>
+        <td><span class="required">*</span>Nhan đề</td>
+        <td colspan="3"><input type="text" class="txtlarge" /></td>
+    </tr>
+    <tr>
+        <td><span class="required">*</span>Tác giả</td>
+        <td colspan="3"><textarea rows="4" class="txtlarge"></textarea></td>
+    </tr>
+    <tr>
+        <td>Nhà xuất bản</td>
+        <td colspan="3"><input type="text" class="txtlarge" /></td>
+    </tr>
+    <tr>
+        <td>Năm xuất bản</td>
+        <td><input type="text" /></td>
+        <td><span class="required">*</span>Ngôn ngữ</td>
+        <td><select class="choose"><option>Việt Nam</option><option>Anh</option><option>Nhật Bản</option></select></td>
+    </tr>
+    <tr>
+        <td><span class="required">*</span>Loại ấn phẩm</td>
+        <td><select class="choose"><option>Sách</option><option>Tạp chí</option><option>Luận văn</option></select></td>
+        <td>Chuyên ngành</td>
+        <td><input type="text" /></td>
+    </tr>
+    <tr>
+        <td>Đơn vị tính</td>
+        <td><select class="choose"><option>cuốn</option></select></td>
+        <td>Số lượng</td>
+        <td><input type="text" /></td>
+    </tr>
+    <tr>
+        <td>Đơn giá</td>
+        <td><input type="text" /></td>
+        <td>Loại tiền</td>
+        <td><select class="choose"><option>VNĐ</option><option>USD</option></select></td>
+    </tr>
+    <tr>
+        <td>ISBN</td>
+        <td colspan="3"><input type="text" /></td>
+    </tr>
+    <tr>
+        <td>Ghi chú</td>
+        <td colspan="3"><textarea rows="4" class="txtlarge"></textarea></td>
+    </tr>
+    <tr class="center">
+        <td colspan="4">
+            <input class="btn" type="submit" value="Lư trữ" />
+            <input class="btn" type="reset" value="Nhập lại" />
+            <input class="btn" type="submit" value="Xóa" />
+        </td>
+    </tr>
+</table>

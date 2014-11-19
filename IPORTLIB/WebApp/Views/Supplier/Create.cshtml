@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Thêm mới nhà cung cấp";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@ViewBag.Title</h2>
+<table class="tbl">
+    <tr>
+        <td><span class="required">*</span>Tên nhà cung cấp</td>
+        <td colspan="3"><input type="text" class="txtlarge"/></td>
+    </tr>
+    <tr>
+        <td><span class="required">*</span>Địa chỉ</td>
+        <td colspan="3"><input type="text" class="txtlarge" /></td>
+    </tr>
+    <tr>
+        <td><span class="required">*</span>Tỉnh/Thành phố</td>
+        <td><input type="text" class="txtavg" /></td>
+        <td><span class="required">*</span>Quốc gia</td>
+        <td><select class="choose"><option>Việt Nam</option><option>Mỹ</option><option>Nhật Bản</option></select></td>
+    </tr>
+    <tr>
+        <td>Điện thoại</td>
+        <td><input type="text" class="txtavg" /></td>
+        <td>Fax</td>
+        <td><input type="text"/></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td colspan="3"><input type="text" class="txtavg" /></td>
+    </tr>
+    <tr>
+        <td>Trang web</td>
+        <td colspan="3"><input type="text" class="txtavg" /></td>
+    </tr>
+    <tr>
+        <td>Tên tài khoản</td>
+        <td colspan="3"><input type="text" class="txtavg" /></td>
+    </tr>
+    <tr>
+        <td>Tên ngân hàng</td>
+        <td colspan="3"><input type="text" class="txtlarge" /></td>
+    </tr>
+    <tr>
+        <td>Số tài khoản</td>
+        <td><input type="text" class="txtavg" /></td>
+        <td>Mã số thuế</td>
+        <td><input type="text" /></td>
+    </tr>
+    <tr>
+        <td>Ghi chú</td>
+        <td colspan="3"><textarea rows="4" class="txtlarge"></textarea></td>
+    </tr>
+    <tr class="center">
+        <td colspan="4">
+            <input class="btn" type="submit" value="Lưu trữ" />
+            <input class="btn" type="reset" value="Nhập lại" />
+            <input class="btn" type="submit" value="Xóa" />
+        </td>
+    </tr>
+</table>
+

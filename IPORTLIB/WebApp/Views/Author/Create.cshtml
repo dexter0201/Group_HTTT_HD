@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Thêm mới tác giả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Thêm mới tác giả</h2>
+<table>
+    <table class="tbl">
+        <tr>
+            <td><span class="required">*</span>Họ</td>
+            <td><input type="text" class="txtavg" /></td>
+            <td><span class="required">*</span>Tên</td>
+            <td><input type="text" class="txtavg" /></td>
+        </tr>
+        <tr>
+            <td><span class="required">*</span>Giới tính</td>
+            <td><select><option>Nữ</option><option>Nam</option></select></td>
+            <td><span class="required">*</span>Ngày sinh</td>
+            <td><input type="text" class="txtdate" /></td>
+        </tr>
+        <tr>
+            <td><span class="required">*</span>Quê quán</td>
+            <td><input type="text" class="txtavg" /></td>
+        </tr>
+        <tr>
+            <td><span class="required">*</span>Tên viết tắt</td>
+            <td><input type="text" class="txtdate" /></td>
+        </tr>
+        <tr>
+            <td>Ghi chú</td>
+            <td colspan="3"><textarea rows="4" class="txtlarge"></textarea></td>
+        </tr>
+        <tr class="center">
+            <td colspan="4">
+                <input class="btn" type="submit" value="Lưu trữ" />
+                <input class="btn" type="reset" value="Nhập lại" />
+                <input class="btn" type="submit" value="Xóa" />
+            </td>
+        </tr>
+    </table>
+</table>

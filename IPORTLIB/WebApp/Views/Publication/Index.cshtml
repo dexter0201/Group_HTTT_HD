@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Quản lý ấn phẩm";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    
+}
+<h2>@ViewBag.Title</h2>
+<br />
+<form>
+    Tìm kiếm: <input size="70" type="text" /><input type="submit" class="btn" value="Tìm" />
+</form>
+<br />
+<table class="table">
+    <tr><th>Nhan đề</th><th>Nhà cung cấp</th><th>Tác giả</th><th>Loại</th><th>Ngôn ngữ</th><th>Năm xuất bản</th><th>Số lượng</th><th>Edit</th><th>Delete</th></tr>
+    <tr>
+        <td>Kỹ thuật lập trình</td>
+        <td>fahasha</td>
+        <td>Trần Đan Thư</td>
+        <td>Sách</td>
+        <td>Việt Nam</td>
+        <td>2010</td>
+        <td>20</td>
+        <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+    </tr>
+    <tr>
+        <td>khoa học</td>
+        <td>fahasha</td>
+        <td>nhiều tg</td>
+        <td>Tạp chí</td>
+        <td>Việt Nam</td>
+        <td>2014</td>
+        <td>5</td>
+        <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+    </tr>
+</table>

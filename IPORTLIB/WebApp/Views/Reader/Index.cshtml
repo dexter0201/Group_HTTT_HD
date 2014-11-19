@@ -1,0 +1,91 @@
+﻿@model WebApp.Utility.UtilityUser
+@{
+    ViewBag.Title = "Tìm kiếm độc giả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+    window.onload = function () {
+        var search = document.forms['search'];
+        search.onsubmit = function () {
+            var xhr = new XMLHttpRequest();
+            var keyword = document.getElementById('txtKeyword').value;
+            var obj = JSON.stringify({ 'Keyword': keyword });
+            var url = '/Reader/Search';
+            var choose = document.getElementById('choose');
+            if (choose.value == 'fullName') {
+                url = '/Reader/SearchByFullName';
+            }
+            xhr.open('POST', url);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('result').innerHTML = xhr.responseText;
+                }
+            }
+            xhr.send(obj);
+            return false;
+        }
+
+
+    }
+    /*$(document).ready(function () {
+        $('#search').submit(function (e) {
+            
+            $.ajax({
+                url: '/Reader/Search',
+                type: 'POST',
+                data: obj,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    alert(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    //if fails  
+                    alert('loi');
+                }
+            });
+            e.preventDefault(); //STOP default action
+            //e.unbind(); //unbind. to stop multiple form submit
+        });
+    });*/
+</script>
+<h2>Tìm kiếm độc giả</h2>
+<form method="post" name="search" action="/Reader/SearchByFullName">
+    <p>
+        <select name="choose" id="choose">
+            <option value="fullName">Họ tên</option>
+            <option value="no">MSSV</option>
+        </select>
+        <input type="text" name="Keyword" id="txtKeyword" value="tuấn" size="70" />
+        <input type="submit" class="btn" value="Tìm kiếm" />
+    <p>
+</form>
+<div id="result">
+    @{Html.RenderPartial("Result");}
+    @*<table class="table">
+        <tr><th>Họ tên</th><th>Tên</th><th>MSSV</th><th>Khoa</th><th>Edit</th><th>Delete</th></tr>
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.UserNo</td>
+                <td>@item.DepartmentName</td>
+                <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+                <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+            </tr>
+        }
+    </table>*@
+    <div class="paging">
+        @{int n = Model.Count;}
+        @if (Model.Count > 20)
+        {
+            n = 20;
+        }
+        @for (int i = 1; i <= n; i++)
+        {
+            <span><a href="/Reader/Index/@i">@i</a></span>
+        }
+    </div>
+</div>

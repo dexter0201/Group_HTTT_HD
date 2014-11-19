@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Tìm kiếm tác giả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<form class="frm">
+    <p><label>Từ khóa</label><input type="text" name="txtKeyword" id="txtKeyword" size="70" /></p>
+    <p>
+        <label>Tiêu đề</label>
+        <select name="choose" id="choose">
+            <option>Tên tác giả</option>
+            <option>Tên tắt</option>
+        </select>
+    </p>
+    <p><label>&nbsp;</label><input type="submit" class="btn" value="Tìm kiếm" /></p>
+</form>
+
+<table class="table">
+    <tr><th>Tên tác giả</th><th>Tên viết tắt</th><th>Ngày sinh</th><th>Edit</th><th>Delete</th></tr>
+    <tr>
+        <td>Dương Anh Khoa</td>
+        <td>DA K</td>
+        <td>19/12/1970</td>
+        <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+    </tr>
+    <tr>
+        <td>Nguyễn Hữu Anh</td>
+        <td>NH A</td>
+        <td>8/1/1961</td>
+        <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+    </tr>
+</table>

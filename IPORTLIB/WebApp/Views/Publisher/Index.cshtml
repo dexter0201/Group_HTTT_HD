@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Tìm kiếm nhà xuất bản";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Tìm kiếm nhà xuất bản</h2>
+<form class="frm">
+    <p><label>Nhà xuất bản</label><input type="text" name="txtKeyword" id="txtKeyword" size="70" /></p>
+    <p><label>&nbsp;</label><input type="submit" class="btn" value="Tìm kiếm" /></p>
+</form>
+<table class="table">
+    <tr><th>Tên nhà xuất bản</th><th>Địa chỉ</th><th>Edit</th><th>Delete</th></tr>
+    <tr>
+        <td>NXB Kim Đồng</td>
+        <td>55 Quang Trung, Hà Nội</td>
+        <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+    </tr>
+    <tr>
+        <td>NXB Giáo dục</td>
+        <td>81 Trần Hưng Đạo, Hà Nội</td>
+        <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+    </tr>
+    <tr>
+        <td>NXB Khoa học và kỹ thuật</td>
+        <td>Số 70 Trần Hưng Đạo, Hà Nội</td>
+        <td><a href="#"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="#"><img src="/Images/Delete.gif" alt="Edit" /></a></td>
+    </tr>
+</table>

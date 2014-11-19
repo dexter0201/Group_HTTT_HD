@@ -1,0 +1,173 @@
+﻿@model DTO.User
+
+@{
+    ViewBag.Title = "Chỉnh sửa độc giả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chỉnh sửa độc giả</h2>
+<form method="post" action="/Reader/Update">
+    <input type="hidden" value="@Model.UserId" name="UserId" />
+    <table class="tbl">
+        <tr class="center tit"><td colspan="4">Thông tin độc giả</td></tr>
+        <tr>
+            <td>Họ</td>
+            <td><input type="text" name="FirstName" class="txtavg" value="@Model.FirstName" /><span class="required">*</span></td>
+            <td>Tên</td>
+            <td><input type="text" name="LastName" class="txtavg" value="@Model.LastName" /><span class="required">*</span></td>
+        </tr>
+        <tr>
+            <td>Mã số(SV/NV)</td>
+            <td><input type="text" name="UserNo" class="txtavg" value="@Model.UserNo" /><span class="required">*</span></td>
+            <td>Số CMND</td>
+            <td><input type="text" name="IdentityCard" class="txtavg" value="@Model.IdentityCard" /></td>
+        </tr>
+        <tr>
+            <td>Giới tính</td>
+            <td><select name="Gender"><option value="fasle">Nữ</option><option value="true">Nam</option></select><span class="required">*</span></td>
+            <td>Ngày sinh</td>
+            <td><input type="date" name="BirthDay" class="txtdate" value="@Model.BirthDay" /><span class="required">*</span></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="Email" class="txtavg" value="@Model.Email" /></td>
+            <td>Số điện thoại</td>
+            <td><input type="text" name="Phone" class="txtavg" value="@Model.Phone" /></td>
+        </tr>
+        <tr>
+            <td>Khoa/đơn vị</td>
+            <td>@Html.DropDownList("DepartmentId")<span class="required">*</span></td>
+            <td>Nhóm</td>
+            <td>@Html.DropDownList("GroupId")<span class="required">*</span></td>
+        </tr>
+        <tr>
+            <td>Tỉnh/Thành phố</td>
+            <td>@Html.DropDownList("ProvinceId")</td>
+        </tr>
+        <tr>
+            <td>Địa chỉ</td>
+            <td colspan="3"><input type="text" name="Address" class="txtlarge" value="@Model.Address" /></td>
+        </tr>
+        <tr>
+            <td>Hình độc giả</td>
+            <td><a href="javascript:void(0);" id="uploadfile">Upload file</a></td>
+            <td></td>
+            <td><input type="hidden" name="AttachmentId" id="AttachmentId" /><img width="70" id="result" src="/Uploads/@Model.Url" /></td>
+        </tr>
+        <tr class="center tit"><td colspan="4">Thông tin thẻ độc giả</td></tr>
+        <tr>
+            <td>Mã số thẻ<span class="required">*</span></td>
+            <td><input type="text" class="txtavg" value="@Model.IdentityCard" /></td>
+            <td>Số mã vạch</td>
+            <td><input type="text" class="txtavg" value="Ma vach" /><span class="required">*</span></td>
+        </tr>
+        <tr>
+            <td>Tên đăng nhập</td>
+            <td><input type="text" class="txtavg" /><span class="required">*</span></td>
+            <td>Mật khẩu</td>
+            <td><input type="password" class="txtavg" /><span class="required">*</span></td>
+        </tr>
+        <tr>
+            <td>Ngày thẻ hết hạn</td>
+            <td><input type="date" /><span class="required">*</span></td>
+            <td>Trạng thái thẻ</td>
+            <td><select class="choose"><option>Được mượn</option><option>không được mượn</option></select><span class="required">*</span></td>
+        </tr>
+        <tr>
+            <td>Tiền ký quỹ</td>
+            <td><input type="text" class="txtavg" /><span class="required">*</span></td>
+            <td>In thẻ</td>
+            <td><select class="choose"><option>In rồi</option><option>Chưa in</option></select></td>
+        </tr>
+        <tr>
+            <td>Ghi chú</td>
+            <td colspan="3"><textarea rows="4" cols="70"></textarea></td>
+        </tr>
+        <tr class="center">
+            <td colspan="4">
+                <input class="btn" type="submit" value="Lưu trữ" />
+                <input class="btn" type="reset" value="Nhập lại" />
+                <input class="btn" type="submit" value="Xóa" />
+            </td>
+        </tr>
+    </table>
+</form>
+<div id="dialog" class="dialog">
+    <img src="/Images/close.png" class="close" />
+    <input type="hidden" id="id" /><img id="url" width="100" />
+    <fieldset>
+        <legend>Upload from Computer</legend>
+        <p><input type="file" name="file" id="file" onchange="loadFile()" /></p>
+        <p><input type="button" value="Ok" onclick="ok()" class="btn" /></p>
+    </fieldset>
+    <fieldset>
+        <legend>Upload from Url</legend>
+        <p>Url:<input type="text" id="txtUrl" name="txtUrl" size="70" /><input type="button" onclick="upload()" value="Upload" /></p>
+        <p><input type="button" value="Ok" onclick="ok()" class="btn" /></p>
+    </fieldset>
+
+</div>
+<script src="/Images/jquery-1.8.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#uploadfile').click(function () {
+            var dialog = $('#dialog');
+            dialog.fadeIn(300);
+            dialog.css({
+                //'top' : (($(window).height() - dialog.height()) / 2) + 'px',
+                'left': (($(window).width() - dialog.width()) / 2) - $(window).scrollLeft() + 'px'
+            });
+            $('body').append('<div id="mask"></div>');
+            $('#mask').fadeIn(300);
+        });
+        $('.close, #mask').live('click', function () {
+            $('#mask, #dialog').fadeOut(300, function () {
+                $('#mask').remove();
+            });
+
+        });
+    });
+    //http://www.alessioatzeni.com/blog/login-box-modal-dialog-window-with-css-and-jquery/
+</script>
+<script>
+    function loadFile() {
+        var file = document.getElementById('file').files[0];
+        if (file != null && file.FileName != '') {
+            var data = new FormData();
+            data.append('file', file);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", '/Attachment/Upload');
+            xhr.send(data);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var obj = JSON.parse(xhr.responseText);
+                    document.getElementById('url').src = "/Uploads/" + obj.Url;
+                    document.getElementById('id').value = obj.AttachmentId;
+                }
+            }
+        }
+    }
+    function upload() {
+        var url = document.getElementById('txtUrl');
+        var data = { Url: url.value };
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/Attachment/UploadFromUrl');
+        alert(JSON.stringify(data));
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr.send(JSON.stringify(data));
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var obj = JSON.parse(xhr.responseText);
+                document.getElementById('url').src = "/Uploads/" + obj.Url;
+                document.getElementById('id').value = obj.AttachmentId;
+            }
+        }
+    }
+    function ok() {
+        document.getElementById('result').src = document.getElementById('url').src;
+        document.getElementById('AttachmentId').value = document.getElementById('id').value;
+        $('#mask, #dialog').fadeOut(300, function () {
+            $('#mask').remove();
+        });
+    }
+</script>
