@@ -528,6 +528,14 @@ as
 	WHERE UserId = @UserId
 go
 
+CREATE PROCEDURE DeleteUserByID
+(
+	@UserId INT
+)
+AS
+	DELETE Users WHERE UserId = @UserId	
+GO
+
 
 --Select * from Users
 

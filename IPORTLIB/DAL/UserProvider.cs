@@ -164,9 +164,10 @@ namespace DAL
             cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = user.Email;
         }
 
-        protected override void SetDeleteParams(SqlCommand cmd, User t)
+        protected override void SetDeleteParams(SqlCommand cmd, int UserId)
         {
-            throw new System.NotImplementedException();
+            cmd.CommandText = "DeleteUserByID";
+            cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = UserId;
         }
 
         protected override void SetGetParams(SqlCommand cmd, int id)

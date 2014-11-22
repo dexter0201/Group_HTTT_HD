@@ -77,18 +77,19 @@ namespace DAL
             }
         }
         protected abstract void SetUpdateParams(SqlCommand cmd, T t);
-        public virtual bool Delete(T t)
+
+        public virtual bool Delete(int id)
         {
-            using (SqlConnection cn = new SqlConnection())
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = cn;
-                SetDeleteParams(cmd, t);
+                SetDeleteParams(cmd, id);
                 cn.Open();
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
-        protected abstract void SetDeleteParams(SqlCommand cmd, T t);
+        protected abstract void SetDeleteParams(SqlCommand cmd, int id);
     }
 }

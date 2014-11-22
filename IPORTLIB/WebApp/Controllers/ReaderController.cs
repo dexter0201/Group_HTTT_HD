@@ -79,5 +79,12 @@ namespace WebApp.Controllers
             AppProvider.UserProvider.Update(user);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Delete(int id)
+        {
+            if (AppProvider.UserProvider.Delete(id))
+                return RedirectToAction("Index", "Reader");
+            return default(ActionResult);
+        }
     }
 }

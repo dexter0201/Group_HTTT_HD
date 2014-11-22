@@ -34,7 +34,7 @@ namespace DAL
             throw new System.NotImplementedException();
         }
 
-        protected override void SetDeleteParams(SqlCommand cmd, Department t)
+        protected override void SetDeleteParams(SqlCommand cmd, int id)
         {
             throw new System.NotImplementedException();
         }
