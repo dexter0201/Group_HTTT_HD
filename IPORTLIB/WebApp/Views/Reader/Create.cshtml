@@ -2,21 +2,21 @@
     ViewBag.Title = "Thêm mới độc giả";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<h2>Thêm mới độc giả</h2>
+@*<h2>Thêm mới độc giả</h2>
 <form method="post" action="/Reader/Create">
     <table class="tbl">
         <tr class="center tit"><td colspan="4">Thông tin độc giả</td></tr>
         <tr>
             <td>Họ</td>
-            <td><input type="text" name="FirstName" class="txtavg" value="chi" /><span class="required">*</span></td>
+            <td><input type="text" name="FirstName" class="txtavg" value="" /><span class="required">*</span></td>
             <td>Tên</td>
-            <td><input type="text" name="LastName" class="txtavg" value="thanh" /><span class="required">*</span></td>
+            <td><input type="text" name="LastName" class="txtavg" value="" /><span class="required">*</span></td>
         </tr>
         <tr>
             <td>Mã số(SV/NV)</td>
-            <td><input type="text" name="UserNo" class="txtavg" value="1512000" /><span class="required">*</span></td>
+            <td><input type="text" name="UserNo" class="txtavg" value="" /><span class="required">*</span></td>
             <td>Số CMND</td>
-            <td><input type="text" name="IdentityCard" class="txtavg" value="121343566" /></td>
+            <td><input type="text" name="IdentityCard" class="txtavg" value="" /></td>
         </tr>
         <tr>
             <td>Giới tính</td>
@@ -26,19 +26,19 @@
         </tr>
         <tr>
             <td>Email</td>
-            <td><input type="text" name="Email" class="txtavg" value="adc@yahoo.com" /></td>
+            <td><input type="text" name="Email" class="txtavg" value="" /></td>
             <td>Số điện thoại</td>
-            <td><input type="text" name="Phone" class="txtavg" value="1234677" /></td>
+            <td><input type="text" name="Phone" class="txtavg" value="" /></td>
         </tr>
         <tr>
             <td>Khoa/đơn vị</td>
-            <td>@Html.DropDownList("DepartmentId", String.Empty)<span class="required">*</span></td>
+            <td>@Html.DropDownList("DepartmentId")<span class="required">*</span></td>
             <td>Nhóm</td>
-            <td>@Html.DropDownList("GroupId", String.Empty)<span class="required">*</span></td>
+            <td>@Html.DropDownList("GroupId")<span class="required">*</span></td>
         </tr>
         <tr>
             <td>Tỉnh/Thành phố</td>
-            <td>@Html.DropDownList("ProvinceId", String.Empty)</td>
+            <td>@Html.DropDownList("ProvinceId")</td>
         </tr>
         <tr>
             <td>Địa chỉ</td>
@@ -48,7 +48,10 @@
             <td>Hình độc giả</td>
             <td><a href="#" id="uploadfile">Upload file</a></td>
             <td></td>
-            <td><input type="hidden" name="AttachmentId" id="AttachmentId" /><img width="70" id="result" /></td>
+            <td>
+                <input type="hidden" name="AttachmentId" id="AttachmentId" />
+                <img width="70" id="result" />
+            </td>
         </tr>
         <tr class="center tit"><td colspan="4">Thông tin thẻ độc giả</td></tr>
         <tr>
@@ -96,8 +99,13 @@
         <p><input type="button" value="Ok" onclick="ok()" class="btn" /></p>
     </fieldset>
     <fieldset><legend>Upload from Url</legend>
-    	<p>Url:<input type="text" id="txtUrl" name="txtUrl" size="70" /><input type="button" onclick="upload()" value="Upload" /></p>
-        <p><input type="button" value="Ok" onclick="ok()" class="btn" /></p>
+    	<p>
+            Url:<input type="text" id="txtUrl" name="txtUrl" size="70" />
+            <input type="button" onclick="upload()" value="Upload" />
+        </p>
+        <p>
+            <input type="button" value="Ok" onclick="ok()" class="btn" />
+        </p>
     </fieldset>
     
 </div>
@@ -118,7 +126,6 @@
             $('#mask, #dialog').fadeOut(300, function () {
                 $('#mask').remove();
             });
-
         });
     });
     //http://www.alessioatzeni.com/blog/login-box-modal-dialog-window-with-css-and-jquery/
@@ -164,4 +171,232 @@
             $('#mask').remove();
         });
     }
-</script>
+</script>*@
+
+<div id="page-wrapper">
+	<!-- /.row -->
+	<div class="row">
+		<div class="col-lg-12">
+			<form role="form" method="post" action="/Reader/Create">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Nhập thông tin - thẻ độc giả
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-6">
+								<h3>Thông tin độc giả</h3>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Họ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Điền họ độc giả" name="FirstName">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Tên&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Điền tên độc giả" name="LastName">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Mã số&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Điền mã số SV/NV" name="UserNo">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										CMND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Điền chứng minh nhân dân" name="IdentityCard">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Giới tính&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+									<select class="form-control" name="Gender">
+										<option value="true">Nam</option>
+										<option value="fasle">Nữ</option>
+									</select>
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Ngày sinh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Ngày sinh" name="BirthDay">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Điền email" name="Email">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Số điện thoại&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Điền số điện thoại" name="Phone">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Khoa/Đơn vị&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+									@Html.DropDownList("DepartmentId", null, new { @class = "form-control" })
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Nhóm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+									@Html.DropDownList("GroupId", null, new { @class = "form-control" })
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">Tỉnh/Thành phố</span>
+									@Html.DropDownList("ProvinceId", null, new { @class = "form-control" })
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Địa chỉ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Địa chỉ" name="Address">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Hình độc giả&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+									<input type="hidden" name="AttachmentId" id="AttachmentId" />
+									<img src="/Images/no_image.jpg" alt="Avatar" 
+										 class="img-circle" width="100" height="100"
+										 style="margin-left: 20px;" id="resultImage">
+									<a class="fa fa-link" id="btnUpload"
+									   style="margin-left: 35px; cursor: pointer;"
+									   data-toggle="modal" data-target="#uploadModal">
+										Upload
+									</a>
+									<input type="hidden" id="OldAttachmentId" />
+									<input type="hidden" id="OldSrcImage" />
+								</div>
+							</div>
+							<!-- /.col-lg-6 (nested) -->
+							<div class="col-lg-6">
+								<h3>Thông tin thẻ độc giả</h3>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Mã số thẻ
+										&nbsp;&nbsp;&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Mã số thẻ">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Mã số vạch
+										&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Mã số vạch">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">Tên đăng nhập</span>
+									<input class="form-control" placeholder="Tên đăng nhập">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Mật khẩu
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Mật khẩu">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Ngày hết hạn<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Ngày hết hạn">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">Trạng thái thẻ&nbsp;&nbsp;</span>
+									<select class="form-control">
+										<option value="1">Được mượn</option>
+										<option value="0">Không được mượn</option>
+									</select>
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Tiền ký quỹ&nbsp;&nbsp;
+										<span class="required">*</span>
+									</span>
+									<input class="form-control" placeholder="Tiền ký quỹ">
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										In thẻ
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+									<select class="form-control">
+										<option value="1">Đã in</option>
+										<option value="0">Chưa in</option>
+									</select>
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon">
+										Ghi chú
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</span>
+									<textarea class="form-control" rows="13" style="resize: none;"></textarea>
+								</div>
+							</div>
+							<!-- /.col-lg-6 (nested) -->
+						</div>
+						<!-- /.row (nested) -->
+					</div>
+					<!-- /.panel-body -->
+				</div>
+				<div class="row" style="text-align: center; margin-bottom: 10px;">
+					<button type="submit" class="btn btn-primary">Lưu</button>
+					<button type="reset" class="btn btn-default">Nhập lại</button>
+				</div>
+				<!-- /.panel -->
+			</form>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+	<!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close cancelImage" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="myModalLabel">Upload hình ảnh</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label>Upload từ thiết bị</label>
+					<input type="file" id="chooseDevice">
+				</div>
+				<div class="form-group">
+					<label>Upload từ URL</label>
+					<input class="form-control" placeholder="Nhập URL" id="chooseUrl">
+				</div>
+				<div class="form-group">
+					<input type="hidden" id="tmpAttachmentId" />
+					<img src="" alt="" id="ChoosedImage"
+						 class="img-circle" width="100" height="100">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default cancelImage" data-dismiss="modal">Đóng</button>
+				<button type="button" class="btn btn-primary" id="readyImage" data-dismiss="modal">Đồng ý</button>
+			</div>
+		</div>
+	</div>
+</div>

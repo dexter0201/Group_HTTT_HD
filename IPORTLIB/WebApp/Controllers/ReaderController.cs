@@ -43,9 +43,9 @@ namespace WebApp.Controllers
         {
             
             GroupProvider groupProvider = new GroupProvider();
-            ViewBag.GroupId = new SelectList(AppProvider.GroupProvider.Gets(), "GroupId", "GroupName");
-            ViewBag.ProvinceId = new SelectList(AppProvider.ProvinceProvider.Gets(1), "ProvinceId", "ProvinceName");
-            ViewBag.DepartmentId = new SelectList(AppProvider.DeparmentProvider.Gets(), "DepartmentId", "DepartmentName");
+            ViewBag.GroupId = new SelectList(AppProvider.GroupProvider.Gets(), "GroupId", "GroupName", Config.defaultSelectedGroup);
+            ViewBag.ProvinceId = new SelectList(AppProvider.ProvinceProvider.Gets(1), "ProvinceId", "ProvinceName", Config.defaultSelectedProvince);
+            ViewBag.DepartmentId = new SelectList(AppProvider.DeparmentProvider.Gets(), "DepartmentId", "DepartmentName", Config.defaultSelectedDepartment);
             return View();
         }
 

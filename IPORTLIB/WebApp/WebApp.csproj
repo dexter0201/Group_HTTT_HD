@@ -143,11 +143,24 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Contents\bootstrap-theme.min.css" />
+    <Content Include="Contents\bootstrap.css" />
+    <Content Include="Contents\bootstrap.min.css" />
+    <Content Include="Contents\font-awesome-4.1.0\css\font-awesome.css" />
+    <Content Include="Contents\font-awesome-4.1.0\css\font-awesome.min.css" />
+    <Content Include="Contents\font-awesome-4.1.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Contents\font-awesome.min.css" />
+    <Content Include="Contents\main.css" />
+    <Content Include="Contents\sb-admin-2.css" />
+    <Content Include="Contents\themify-icons.min.css" />
+    <Content Include="Contents\weather-icons.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\App.js" />
+    <Content Include="Images\bootstrap.min.js" />
     <Content Include="Images\close.png" />
     <Content Include="Images\Delete.gif" />
     <Content Include="Images\Edit.gif" />
-    <Content Include="Images\jquery-1.8.2.min.js" />
+    <Content Include="Images\jquery-1.10.2.min.js" />
     <Content Include="Images\Style.css" />
     <Content Include="menu.xml">
       <SubType>Designer</SubType>
@@ -282,6 +295,39 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Reader\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\css" />
+    <Content Include="Contents\font-awesome-4.1.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Contents\font-awesome-4.1.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Contents\font-awesome-4.1.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Contents\font-awesome-4.1.0\fonts\FontAwesome.otf" />
+    <Content Include="Contents\font-awesome-4.1.0\less\bordered-pulled.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\core.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\fixed-width.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\font-awesome.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\icons.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\larger.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\list.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\mixins.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\path.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\rotated-flipped.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\spinning.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\stacked.less" />
+    <Content Include="Contents\font-awesome-4.1.0\less\variables.less" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\font-awesome.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_bordered-pulled.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_core.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_fixed-width.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_icons.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_larger.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_list.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_mixins.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_path.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_rotated-flipped.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_spinning.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_stacked.scss" />
+    <Content Include="Contents\font-awesome-4.1.0\scss\_variables.scss" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
