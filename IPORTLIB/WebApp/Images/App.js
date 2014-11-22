@@ -22,6 +22,7 @@
 			}).success(function (dataResponsive) {
 				$("#ChoosedImage").attr("src", "/Uploads/" + dataResponsive.Url);
 				$("#tmpAttachmentId").val(dataResponsive.AttachmentId);
+				$("#txtUrl").attr("disabled", true);
 				$("#chooseUrl").attr("disabled", true);
 			});
 		}
@@ -40,28 +41,30 @@
 		$("#AttachmentId").val($("#OldAttachmentId").val());
 		$("#resultImage").val($("#OldSrcImage").val());
 	});
+
+	// upload file from Url
+	$("#chooseUrl").click(function () {
+		var txtUrl = $("#txtUrl").val();
+		if (txtUrl !== "") {
+			var data = { Url: txtUrl };
+			$.ajax({
+				url: "/Attachment/UploadFromUrl",
+				type: "POST",
+				dataType: 'json',
+				data: data
+			}).success(function (dataResponsive) {
+				$("#ChoosedImage").attr("src", "/Uploads/" + dataResponsive.Url);
+				$("#tmpAttachmentId").val(dataResponsive.AttachmentId);
+				$("#chooseDevice").attr("disabled", true);
+			});
+		}
+	});
 });
 
 
 
 
-//    function loadFile() {
-//    	var file = document.getElementById('file').files[0];
-//    	if (file != null && file.FileName != '') {
-//    		var data = new FormData();
-//    		data.append('file', file);
-//    		var xhr = new XMLHttpRequest();
-//    		xhr.open("POST", '/Attachment/Upload');
-//    		xhr.send(data);
-//    		xhr.onreadystatechange = function () {
-//    			if (xhr.readyState == 4 && xhr.status == 200) {
-//    				var obj = JSON.parse(xhr.responseText);
-//    				document.getElementById('url').src = "/Uploads/" + obj.Url;
-//    				document.getElementById('id').value = obj.AttachmentId;
-//    			}
-//    		}
-//    	}
-//    }
+
 //function upload() {
 //	var url = document.getElementById('txtUrl');
 //	var data = { Url: url.value };

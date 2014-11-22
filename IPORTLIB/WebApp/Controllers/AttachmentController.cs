@@ -16,6 +16,7 @@ namespace WebApp.Controllers
         {
             return View();
         }
+
         public JsonResult Upload(Attachment attachment)
         {
             HttpPostedFileBase file = Request.Files[0];
@@ -25,6 +26,7 @@ namespace WebApp.Controllers
             AppProvider.AttachmentProvider.Insert(attachment);
             return Json(attachment);
         }
+
         public JsonResult UploadFromUrl(Attachment attachment)
         {
             string url = Path.GetFileName(attachment.Url);
