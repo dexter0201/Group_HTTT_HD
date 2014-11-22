@@ -16,7 +16,8 @@ namespace DAL
                 DepartmentName = (string)reader["DepartmentName"],
                 FirstName = (string)reader["FirstName"],
                 LastName = (string)reader["LastName"],
-                Url = reader.GetSchemaTable().Select("ColumnName='Url'").Length > 0 ? (string)reader["Url"] : ""
+                //AttachmentId = reader.GetSchemaTable().Select("ColumnName='AttachmentId'").Length > 0 ? (int)reader["AttachmentId"] : -1,
+                //Url = reader.GetSchemaTable().Select("ColumnName='Url'").Length > 0 ? (string)reader["Url"] : ""
             };
         }
 
@@ -48,6 +49,21 @@ namespace DAL
             return Gets(Config.pageSize, pageIndex);
         }
 
+        private User getForUpdate(SqlDataReader reader)
+        {
+            return new User
+            {
+                UserId = (int)reader["UserId"],
+                UserNo = (string)reader["UserNo"],
+                DepartmentId = (int)reader["DepartmentId"],
+                DepartmentName = (string)reader["DepartmentName"],
+                FirstName = (string)reader["FirstName"],
+                LastName = (string)reader["LastName"],
+                AttachmentId = (int)reader["AttachmentId"],
+                Url = (string)reader["Url"]
+            };
+        }
+
         public User Get(int id)
         {
             using (SqlConnection cn = new SqlConnection(Config.ConnectString))
@@ -58,7 +74,7 @@ namespace DAL
                 cn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
-                    return Get(reader);
+                    return getForUpdate(reader);
                 return null;
             }
         }
