@@ -60,31 +60,3 @@
 		}
 	});
 });
-
-
-
-
-
-//function upload() {
-//	var url = document.getElementById('txtUrl');
-//	var data = { Url: url.value };
-//	var xhr = new XMLHttpRequest();
-//	xhr.open('POST', '/Attachment/UploadFromUrl');
-//	alert(JSON.stringify(data));
-//	xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-//	xhr.send(JSON.stringify(data));
-//	xhr.onreadystatechange = function () {
-//		if (xhr.readyState == 4 && xhr.status == 200) {
-//			var obj = JSON.parse(xhr.responseText);
-//			document.getElementById('url').src = "/Uploads/" + obj.Url;
-//			document.getElementById('id').value = obj.AttachmentId;
-//		}
-//	}
-//}
-//function ok() {
-//	document.getElementById('result').src = document.getElementById('url').src;
-//	document.getElementById('AttachmentId').value = document.getElementById('id').value;
-//	$('#mask, #dialog').fadeOut(300, function () {
-//		$('#mask').remove();
-//	});
-//}
