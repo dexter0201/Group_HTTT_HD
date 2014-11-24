@@ -21,5 +21,7 @@ namespace DTO
         public string Phone { get; set; }
         public string IdentityCard { get; set; }
         public string Address { get; set; }
+        public int CountLoan { get; set; }
+
     }
 }

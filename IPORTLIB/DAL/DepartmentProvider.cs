@@ -19,6 +19,24 @@ namespace DAL
                 return Gets(reader);
             }
         }
+        public List<ReportUsersDepartments> ReportUsersDepartments()
+        {
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+            {
+                SqlCommand cmd = new SqlCommand("ReportUsersDepartments", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ReportUsersDepartments> list = new List<ReportUsersDepartments>();
+                while (reader.Read())
+                    list.Add(new ReportUsersDepartments
+                    {
+                        DepartmentName = (string)reader["DepartmentName"],
+                        CountUsers = (int)reader["CountUsers"]
+                    });
+                return list;
+            }
+        }
         protected override Department Get(SqlDataReader reader)
         {
             return new Department { DepartmentId = (int)reader["DepartmentId"], DepartmentName = (string)reader["DepartmentName"] };

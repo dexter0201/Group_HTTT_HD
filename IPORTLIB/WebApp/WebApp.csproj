@@ -15,7 +15,7 @@
     <AssemblyName>WebApp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -162,6 +162,7 @@
     <Content Include="Images\Edit.gif" />
     <Content Include="Images\jquery-1.10.2.min.js" />
     <Content Include="Images\Style.css" />
+    <Content Include="LayoutReport.xml" />
     <Content Include="menu.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -227,9 +228,6 @@
     <Content Include="Views\Reader\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Circulation\CheckOut.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Author\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -240,18 +238,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Publisher\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Circulation\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Circulation\StatisticBook.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Circulation\Role.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Circulation\StatisticReader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Login.cshtml" />
@@ -277,8 +263,12 @@
       <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{60932BAC-F67C-4D56-BDA1-486FB53D0EB4}</Project>
+      <Project>{60932bac-f67c-4d56-bda1-486fb53d0eb4}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Report\Report.csproj">
+      <Project>{447fe50f-293b-46b5-acda-35f69c5172d3}</Project>
+      <Name>Report</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -329,6 +319,21 @@
     <Content Include="Contents\font-awesome-4.1.0\scss\_stacked.scss" />
     <Content Include="Contents\font-awesome-4.1.0\scss\_variables.scss" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Circulation\CheckOut.cshtml" />
+    <Content Include="Views\Circulation\DetailLoan.cshtml" />
+    <Content Include="Views\Circulation\Index.cshtml" />
+    <Content Include="Views\Circulation\LoanMonitoring.cshtml" />
+    <Content Include="Views\Circulation\ReportOutOfDateLoans.cshtml" />
+    <Content Include="Views\Circulation\Role.cshtml" />
+    <Content Include="Views\Circulation\StatisticBook.cshtml" />
+    <Content Include="Views\Circulation\StatisticReader.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\ReportOutOfDateLoans.rdlc" />
+    <EmbeddedResource Include="Report\ReportUsersDepartments.rdlc" />
+    <EmbeddedResource Include="Report\ReportUsersLoan.rdlc" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -343,12 +348,13 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2485</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:2488/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:2488/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

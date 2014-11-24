@@ -3,8 +3,18 @@ C:\Users\THANH-THAI\Desktop\IPORTLIB\DTO\bin\Debug\DTO.pdb
 C:\Users\THANH-THAI\Desktop\IPORTLIB\DTO\obj\Debug\DTO.dll
 C:\Users\THANH-THAI\Desktop\IPORTLIB\DTO\obj\Debug\DTO.pdb
 C:\Users\THANH-THAI\Desktop\IPORTLIB\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
-C:\Users\Kalel\Dropbox\Working\IPORTLIB\DTO\bin\Debug\DTO.dll
-C:\Users\Kalel\Dropbox\Working\IPORTLIB\DTO\bin\Debug\DTO.pdb
-C:\Users\Kalel\Dropbox\Working\IPORTLIB\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
-C:\Users\Kalel\Dropbox\Working\IPORTLIB\DTO\obj\Debug\DTO.dll
-C:\Users\Kalel\Dropbox\Working\IPORTLIB\DTO\obj\Debug\DTO.pdb
+C:\Users\Minh Thanh\Desktop\IPORTLIB\DTO\bin\Debug\DTO.dll
+C:\Users\Minh Thanh\Desktop\IPORTLIB\DTO\bin\Debug\DTO.pdb
+C:\Users\Minh Thanh\Desktop\IPORTLIB\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Minh Thanh\Desktop\IPORTLIB\DTO\obj\Debug\DTO.dll
+C:\Users\Minh Thanh\Desktop\IPORTLIB\DTO\obj\Debug\DTO.pdb
+C:\Users\Minh Thanh\Desktop\New folder\IPORTLIB\DTO\bin\Debug\DTO.dll
+C:\Users\Minh Thanh\Desktop\New folder\IPORTLIB\DTO\bin\Debug\DTO.pdb
+C:\Users\Minh Thanh\Desktop\New folder\IPORTLIB\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Minh Thanh\Desktop\New folder\IPORTLIB\DTO\obj\Debug\DTO.dll
+C:\Users\Minh Thanh\Desktop\New folder\IPORTLIB\DTO\obj\Debug\DTO.pdb
+C:\Users\Minh Thanh\Desktop\Group_HTTT_HD\IPORTLIB\DTO\bin\Debug\DTO.dll
+C:\Users\Minh Thanh\Desktop\Group_HTTT_HD\IPORTLIB\DTO\bin\Debug\DTO.pdb
+C:\Users\Minh Thanh\Desktop\Group_HTTT_HD\IPORTLIB\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Minh Thanh\Desktop\Group_HTTT_HD\IPORTLIB\DTO\obj\Debug\DTO.dll
+C:\Users\Minh Thanh\Desktop\Group_HTTT_HD\IPORTLIB\DTO\obj\Debug\DTO.pdb
