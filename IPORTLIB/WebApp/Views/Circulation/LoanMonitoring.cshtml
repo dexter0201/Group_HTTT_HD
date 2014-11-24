@@ -1,0 +1,91 @@
+﻿@model IEnumerable<DTO.User>
+
+@{
+    ViewBag.Title = "Theo dõi mượn sách";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@*<link rel="stylesheet" href="/Images/jquery-ui.css">*@
+@*<script src="/Images/jquery-1.11.1.js"></script>*@
+@*<script src="/Images/jquery-ui.js"></script>*@
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#dialog-detail").dialog({
+                width: 700,
+                height: 500,
+                autoOpen: false,
+                modal: true,
+                title: "Chi tiết mượn sách",
+                buttons: {
+                    Close: function () {
+                        $("#dialog-detail").dialog('close');
+                    }
+                }
+            });
+            $("input").bind('click', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Circulation/DetailLoan/" + $(this).val(),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $("#dialog-detail").html(data);
+                        $("#dialog-detail").dialog("open");
+                    }
+                });
+               
+            });
+        });
+    });
+</script>*@
+<h4>Danh sách cái độc giả mượn sách</h4>
+<form method="post" name="search" action="/Circulation/SearchUserLoanByNo">
+    <p>
+        <select name="choose" id="choose">
+            <option value="no">MSSV</option>
+        </select>
+        <input type="text" name="Keyword" id="txtKeyword" size="70" value="0811329" />
+        <input type="submit" class="btn" value="Tìm kiếm" />
+    <p>
+</form>
+<table class="table">
+    <tr>
+        <th>
+            MSSV
+        </th>
+        <th>
+           Họ
+        </th>
+        <th>
+            Tên
+        </th>
+        
+        <th>
+            Khoa
+        </th>
+        <th>Chi tiết</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentName)
+        </td>
+        <td>
+            <input type="image" src="/Images/detail.png" alt="Edit" value="@item.UserId" />
+        </td>
+    </tr>
+}
+
+</table>
+
+<div id="dialog-detail" style="display: none">
+</div>

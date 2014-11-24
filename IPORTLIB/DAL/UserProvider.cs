@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using DTO;
 using System.Data.SqlClient;
 using System.Data;
+
+using System;
 namespace DAL
 {
     public class UserProvider : BaseProvider<User>
@@ -174,6 +176,157 @@ namespace DAL
         {
             cmd.CommandText = "GetUserById";
             cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = id;
+        }
+
+        /* -------- Report Users -----------*/
+        public List<ReportUsersLoan> ReportUsersLoan()
+        {
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+            {
+
+                SqlCommand cmd = new SqlCommand("ReportUsersLoan", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ReportUsersLoan> list = new List<ReportUsersLoan>();
+                while (reader.Read())
+                {
+                    list.Add(new ReportUsersLoan
+                    {
+                        Year = reader["Year"].ToString(),
+                        Count = (int)reader["CountUsers"]
+                    });
+                }
+                return list;
+            }
+        }
+
+        public List<User> GetReportUsersLoanByYear(string year)
+        {
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+            {
+
+                SqlCommand cmd = new SqlCommand("GetReportUsersLoanByYear", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@year", SqlDbType.VarChar).Value = year;
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<User> list = new List<User>();
+                while (reader.Read())
+                {
+                    list.Add(new User
+                    {
+                        UserNo = (string)reader["UserNo"],
+                        FirstName = (string)reader["FirstName"],
+                        LastName = (string)reader["LastName"],
+                        CountLoan = (int)reader["CountLoan"]
+                    });
+                }
+                return list;
+            }
+        }
+        public List<Stores> ReportLoansPercent()
+        {
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+            {
+
+                SqlCommand cmd = new SqlCommand("ReportLoansPercent", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Stores> list = new List<Stores>();
+                while (reader.Read())
+                {
+                    list.Add(new Stores
+                    {
+                        StoreName = (string)reader["storename"],
+                        LoanPercent = decimal.Parse(reader["LoanPercent"].ToString())
+                    });
+                }
+                return list;
+            }
+        }
+
+        public List<ReportOutOfDateLoans> GetReportOutOfDateLoans()
+        {
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+            {
+
+                SqlCommand cmd = new SqlCommand("GetReportOutOfDateLoans", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ReportOutOfDateLoans> list = new List<ReportOutOfDateLoans>();
+                while (reader.Read())
+                {
+                    list.Add(new ReportOutOfDateLoans
+                    {
+                        UserNo = (string)reader["UserNo"],
+                        FirstName = (string)reader["FirstName"],
+                        LastName = (string)reader["LastName"],
+                        DateLoan = DateTime.Parse(reader["DateLoan"].ToString()).ToString("dd/MM/yyyy"),
+                        DatePay = DateTime.Parse(reader["DatePay"].ToString()).ToString("dd/MM/yyyy"),
+                        NumberSpecific = (string)reader["NumberSpecific"],
+                        Title = (string)reader["Title"]
+                    });
+                }
+                return list;
+            }
+        }
+
+        /* -------- Theo dõi mượn sách -----------*/
+        public List<User> GetUsersLoan()
+        {
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+            {
+                SqlCommand cmd = new SqlCommand("GetUsersLoan", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                return Gets(reader);
+            }
+
+        }
+        public List<User> GetUsersLoanByUserNo(string userno)
+        {
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+            {
+                SqlCommand cmd = new SqlCommand("GetUserLoanByUserNo", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@UserNo", SqlDbType.VarChar).Value = userno;
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                return Gets(reader);
+            }
+
+        }
+        public List<ReportOutOfDateLoans> GetDetailLoanByUserid(int id)
+        {
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+            {
+                SqlCommand cmd = new SqlCommand("GetDetailLoanByUserid", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ReportOutOfDateLoans> list = new List<ReportOutOfDateLoans>();
+                while (reader.Read())
+                {
+                    list.Add(new ReportOutOfDateLoans
+                    {
+                        UserNo = (string)reader["UserNo"],
+                        FirstName = (string)reader["FirstName"],
+                        LastName = (string)reader["LastName"],
+                        DateLoan = DateTime.Parse(reader["DateLoan"].ToString()).ToString("dd/MM/yyyy"),
+                        DatePay = DateTime.Parse(reader["DatePay"].ToString()).ToString("dd/MM/yyyy"),
+                        NumberSpecific = (string)reader["NumberSpecific"],
+                        Title = (string)reader["Title"],
+                        DepartmentName = (string)reader["DepartmentName"],
+                        Image = reader["Url"].ToString()
+                    });
+                }
+                return list;
+            }
         }
     }
 }

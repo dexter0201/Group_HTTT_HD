@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DTO.ReportOutOfDateLoans>
+
+@{
+   
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<a href="/Circulation/GetReportOutOfDateLoans/1">PDF</a>|
+<a href="/Circulation/GetReportOutOfDateLoans/2">WORD</a>|
+<a href="/Circulation/GetReportOutOfDateLoans/3">EXCEL</a>
+<table class="table">
+    <tr>
+        <th>MSSV</th>
+        <th>HỌ</th>
+        <th>TÊN</th>
+        <th>NGÀY MƯỢN</th>
+        <th>NGÀY TRẢ</th>
+        <th>TÊN SÁCH</th>
+        <th>MS SÁCH</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        
+        <tr>
+            <td>
+                @item.UserNo
+            </td>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.DateLoan
+            </td>
+            <td>
+                @item.DatePay
+            </td>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.NumberSpecific
+            </td>
+
+        </tr>
+    }
+
+</table>

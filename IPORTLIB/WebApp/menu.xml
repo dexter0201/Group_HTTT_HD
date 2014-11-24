@@ -8,6 +8,7 @@
   </menu>
   <menu id="Circulation" module="Phân hệ biên mục">
     <item value="Mượn trả sách" url="/Circulation/CheckOut" />
+    <item value="Theo dõi mượn sách" url="/Circulation/LoanMonitoring" />
     <item value="Tìm kiếm độc giả" url="/Circulation" />
     <item value="Thống kê độc giả" url="/Circulation/StatisticReader" />
     <item value="Thống kê sách" url="/Circulation/StatisticBook" />

@@ -59,4 +59,157 @@
 			});
 		}
 	});
+
+    // Minh Thanh
+	var options = {
+	    chart: {
+	        renderTo: 'container',
+	        type: 'column',
+
+	    },
+	    xAxis: {
+	        categories: ["A", "B"]
+	    },
+	    title: {
+	        text: '',
+	    },
+	    plotOptions: {
+	        series: {
+	            cursor: 'pointer',
+	            point: {
+	                events: {
+	                    click: function (event) {
+	                        var url = this.series.userOptions.URLs + this.category;
+	                        location.href = url;
+	                    }
+	                }
+	            }
+	        }
+	    },
+	    series: [{
+	        URLs: 'url',
+	        name: 'Độc giả',
+	        data: [
+                800, 9
+	        ]
+	    }]
+	};
+
+	var optionsPie = {
+	    chart: {
+	        renderTo: 'container',
+	        plotBackgroundColor: null,
+	        plotBorderWidth: 1,//null,
+	        plotShadow: false
+	    },
+	    title: {
+	        text: 'Browser market shares at a specific website, 2014'
+	    },
+	    tooltip: {
+	        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	    },
+	    plotOptions: {
+	        pie: {
+	            allowPointSelect: true,
+	            cursor: 'pointer',
+	            dataLabels: {
+	                enabled: true,
+	                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+	                style: {
+	                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+	                }
+	            }
+	        }
+	    },
+	    series: [{
+	        type: 'pie',
+	        name: 'Percent',
+	        data: [
+                ['Firefox', 50],
+                ['IE', 50]
+
+	        ]
+	    }]
+
+	}
+
+	$("#drawchart").submit(function (e) {
+	    console.log('123');
+	    e.preventDefault();
+
+	    var type = ($("#type").val());
+	    if (type == "type1") {
+	        var URL = "/Circulation/ReportUsersDepartmentsJSON";
+	        $("#download").html("<a href='/Circulation/GetReportUsersDepartment/1'>PDF</a> |" +
+                                "<a href='/Circulation/GetReportUsersDepartment/2'>WORD</a> |" +
+                                "<a href='/Circulation/GetReportUsersDepartment/3'>EXCEL</a>");
+	        $.getJSON(URL, null, function (data) {
+	            options.title.text = ["Số lượng độc giả theo khoa"];
+	            options.xAxis.categories = data.name;
+	            options.series[0].data = data.value;
+	            options.series[0].URLs = "#";
+	            chart = new Highcharts.Chart(options);
+	        });
+	    }
+	    else {
+	        $("#download").html("");
+	        $("#container").html("");
+	        if (type == "type2") {
+	            var URL = "/Circulation/ReportUsersLoanJSON";
+	            $.getJSON(URL, null, function (data) {
+
+	                options.title.text = ["Số lượng độc giả mượn sách theo năm"];
+	                options.xAxis.categories = data.name;
+	                options.series[0].data = data.value;
+	                options.series[0].URLs = "GetReportUsersLoanByYear?year=";
+	                chart = new Highcharts.Chart(options);
+	            });
+	        }
+	        else {
+	            if (type == "type3") {
+	                var URL = "/Circulation/ReportLoansPercentJSON";
+	                $.getJSON(URL, null, function (data) {
+	                    optionsPie.title.text = ["Tỉ lệ mượn sách ở các sơ sở"];
+	                    optionsPie.series[0].data = data;
+	                    var chartPie = new Highcharts.Chart(optionsPie);
+	                });
+	            }
+	            else {
+	                if (type == "type4") {
+	                    var url = "/Circulation/ReportOutOfDateLoans";
+	                    $(location).attr('href', url);
+
+	                }
+
+	            }
+	        }
+	    }
+	});
+
+	$(function () {
+	    $("#dialog-detail").dialog({
+	        width: 700,
+	        height: 500,
+	        autoOpen: false,
+	        modal: true,
+	        title: "Chi tiết mượn sách",
+	        buttons: {
+	            Close: function () {
+	                $("#dialog-detail").dialog('close');
+	            }
+	        }
+	    });
+	    $("input").bind('click', function () {
+	        $.ajax({
+	            type: "POST",
+	            url: "/Circulation/DetailLoan/" + $(this).val(),
+	            contentType: "application/json; charset=utf-8",
+	            success: function (data) {
+	                $("#dialog-detail").html(data);
+	                $("#dialog-detail").dialog("open");
+	            }
+	        });
+
+	    });
+	});
 });
