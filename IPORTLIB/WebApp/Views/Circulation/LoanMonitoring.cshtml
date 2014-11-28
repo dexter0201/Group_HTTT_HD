@@ -38,13 +38,13 @@
     });
 </script>*@
 <h4>Danh sách cái độc giả mượn sách</h4>
-<form method="post" name="search" action="/Circulation/SearchUserLoanByNo">
+<form class="form-inline" method="post" name="search" action="/Circulation/SearchUserLoanByNo">
     <p>
-        <select name="choose" id="choose">
+        <select class="form-control" name="choose" id="choose">
             <option value="no">MSSV</option>
         </select>
-        <input type="text" name="Keyword" id="txtKeyword" size="70" value="0811329" />
-        <input type="submit" class="btn" value="Tìm kiếm" />
+        <input class="form-control" type="text" name="Keyword" id="txtKeyword" size="70" value="0811329" />
+        <input type="submit" value="Tìm" class="btn btn-default" />
     <p>
 </form>
 <table class="table">

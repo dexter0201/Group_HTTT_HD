@@ -51,14 +51,14 @@
     });*/
 </script>
 <h2>Tìm kiếm độc giả</h2>
-<form method="post" name="search" action="/Reader/SearchByFullName">
+<form class="form-inline" method="post" name="search" action="/Reader/SearchByFullName">
     <p>
-        <select name="choose" id="choose">
+        <select class="form-control" name="choose" id="choose">
             <option value="fullName">Họ tên</option>
             <option value="no">MSSV</option>
         </select>
-        <input type="text" name="Keyword" id="txtKeyword" value="tuấn" size="70" />
-        <input type="submit" class="btn" value="Tìm kiếm" />
+        <input class="form-control" type="text" name="Keyword" id="txtKeyword" value="tuấn" size="70" />
+        <input class="btn btn-default" type="submit" value="Tìm" />
     <p>
 </form>
 <div id="result">
