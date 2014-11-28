@@ -134,7 +134,7 @@
 	}
 
 	$("#drawchart").submit(function (e) {
-	    console.log('123');
+	
 	    e.preventDefault();
 
 	    var type = ($("#type").val());
@@ -212,4 +212,5 @@
 
 	    });
 	});
+
 });
