@@ -67,6 +67,7 @@
     <Compile Include="PublisherProvider.cs" />
     <Compile Include="SupplierProvider.cs" />
     <Compile Include="TopicProvider.cs" />
+    <Compile Include="UserEnrollmentProvider.cs" />
     <Compile Include="UserProvider.cs" />
   </ItemGroup>
   <ItemGroup>

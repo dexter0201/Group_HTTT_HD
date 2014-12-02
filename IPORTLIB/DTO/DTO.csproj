@@ -45,6 +45,7 @@
     <Compile Include="Book.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="datetime.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Language.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Supplier.cs" />
     <Compile Include="Topic.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserEnrollment.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
