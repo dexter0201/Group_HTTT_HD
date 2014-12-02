@@ -1,5 +1,6 @@
 ﻿using DTO;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 using System.Data;
 
 namespace DAL
@@ -8,8 +9,13 @@ namespace DAL
     {
         protected override Attachment Get(System.Data.SqlClient.SqlDataReader reader)
         {
-            return new Attachment { AttachmentId = (int)reader["AttachmentId"], AttachmentTypeId = (int)reader["AttachmentTypeId"], Url = (string)reader["Url"] };
+            return new Attachment {
+				AttachmentId = (int)reader["AttachmentId"],
+				AttachmentTypeId = (int)reader["AttachmentTypeId"],
+				Url = (string)reader["Url"]
+			};
         }
+
         public void Insert(Attachment attachment)
         {
             using (SqlConnection cn = new SqlConnection(Config.ConnectString))
@@ -54,5 +60,19 @@ namespace DAL
         {
             throw new System.NotImplementedException();
         }
+
+		public List<Attachment> Gets(int pageSize, int pageIndex)
+		{
+			using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+			{
+				SqlCommand cmd = new SqlCommand("GetAttachments", cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+				//cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pageSize;
+				//cmd.Parameters.Add("@PageIndex", SqlDbType.Int).Value = pageIndex;
+				cn.Open();
+				SqlDataReader reader = cmd.ExecuteReader();
+				return Gets(reader);
+			}
+		}
     }
 }

@@ -377,7 +377,10 @@ as
 	Set @AttachmentId = SCOPE_IDENTITY();
 go
 
-
+CREATE PROCEDURE GetAttachments
+AS
+	SELECT * FROM Attachments
+GO
 
 --Drop Table Users;
 Create Table Users

@@ -89,6 +89,8 @@ namespace WebApp.Controllers
 
 		public ActionResult ImageManage()
 		{
+
+
 			return View();
 		}
     }
