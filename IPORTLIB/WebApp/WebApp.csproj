@@ -159,7 +159,10 @@
     <Content Include="Images\bootstrap.min.js" />
     <Content Include="Images\close.png" />
     <Content Include="Images\Delete.gif" />
+    <Content Include="Images\deleteIcon.png" />
     <Content Include="Images\Edit.gif" />
+    <Content Include="Images\fav-inactive.png" />
+    <Content Include="Images\fav.png" />
     <Content Include="Images\jquery-1.10.2.min.js" />
     <Content Include="Images\Style.css" />
     <Content Include="LayoutReport.xml" />
@@ -333,6 +336,9 @@
     <EmbeddedResource Include="Report\ReportOutOfDateLoans.rdlc" />
     <EmbeddedResource Include="Report\ReportUsersDepartments.rdlc" />
     <EmbeddedResource Include="Report\ReportUsersLoan.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reader\ImageManage.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

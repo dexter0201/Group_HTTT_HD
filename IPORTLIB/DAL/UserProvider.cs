@@ -57,12 +57,12 @@ namespace DAL
             {
                 UserId = (int)reader["UserId"],
                 UserNo = (string)reader["UserNo"],
-                DepartmentId = (int)reader["DepartmentId"],
-                DepartmentName = (string)reader["DepartmentName"],
+                DepartmentId = reader["DepartmentId"].ToString() != "" ? (int)reader["DepartmentId"] : -1,
+                DepartmentName = reader["DepartmentName"] != null ? (string)reader["DepartmentName"] : "",
                 FirstName = (string)reader["FirstName"],
                 LastName = (string)reader["LastName"],
-                AttachmentId = (int)reader["AttachmentId"],
-                Url = (string)reader["Url"]
+                AttachmentId = reader["AttachmentId"].ToString() != "" ? (int)reader["AttachmentId"] : -1,
+                Url = reader["Url"].ToString() != "" ? (string)reader["Url"] : ""
             };
         }
 

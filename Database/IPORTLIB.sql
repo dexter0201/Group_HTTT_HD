@@ -430,7 +430,7 @@ as
 	Select UserId, Departments.DepartmentId, Departments.DepartmentName, ProvinceId, GroupId, Users.AttachmentId, UserNo, FirstName,
 			LastName, Gender, BirthDay, Address, Phone, IdentityCard, Attachments.Url
 	from Users inner join Departments on Departments.DepartmentId = Users.DepartmentId
-				inner join Attachments on Users.AttachmentId = Attachments.AttachmentId
+				left join Attachments on Users.AttachmentId = Attachments.AttachmentId
 	where UserId = @UserId;
 go
 Alter Procedure GetUserByNo

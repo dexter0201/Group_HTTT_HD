@@ -186,18 +186,17 @@
 	    }
 	});
 
-	$(function () {
-	    $("#dialog-detail").dialog({
-	        width: 700,
-	        height: 500,
-	        autoOpen: false,
-	        modal: true,
-	        title: "Chi tiết mượn sách",
-	        buttons: {
-	            Close: function () {
-	                $("#dialog-detail").dialog('close');
-	            }
+	$("#dialog-detail").dialog({
+	    width: 700,
+	    height: 500,
+	    autoOpen: false,
+	    modal: true,
+	    title: "Chi tiết mượn sách",
+	    buttons: {
+	        Close: function () {
+	            $("#dialog-detail").dialog('close');
 	        }
+<<<<<<< HEAD
 	    });
 	    $("input.detail_loan").bind('click', function () {
 	        $.ajax({
@@ -209,8 +208,21 @@
 	                $("#dialog-detail").dialog("open");
 	            }
 	        });
-
-	    });
+=======
+	    }
 	});
+>>>>>>> 4f7a214742a6df6a089ae868734e30d32479837c
 
+	$("input").bind('click', function () {
+	    $.ajax({
+	        type: "POST",
+	        url: "/Circulation/DetailLoan/" + $(this).val(),
+	        contentType: "application/json; charset=utf-8",
+	        success: function (data) {
+	            $("#dialog-detail").html(data);
+	            $("#dialog-detail").dialog("open");
+	        }
+	    });
+
+	});
 });
