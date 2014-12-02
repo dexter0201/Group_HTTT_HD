@@ -529,18 +529,18 @@ Create Procedure UpdateUser
 (
 	@UserId int,
 	@DepartmentId int,
-	@ProvinceId int = null,
+	@ProvinceId int,
 	@GroupId int,
-	@AttachmentId int = null,
 	@UserNo varchar(8),
 	@FirstName nvarchar(64),
 	@LastName nvarchar(32),
-	@Gender bit = null,
-	@BirthDay date = null,
-	@Address nvarchar(256) = null,
-	@Phone varchar(16) = null,
-	@IdentityCard varchar(16) = null,
-	@Email varchar(128) = null
+	@Gender bit,
+	@BirthDay date,
+	@Address nvarchar(256),
+	@Phone varchar(16),
+	@IdentityCard varchar(16),
+	@Email varchar(128),
+	@AttachmentId int = null
 )
 as
 	UPDATE Users

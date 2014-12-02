@@ -74,10 +74,13 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(User user)
+		public ActionResult Update(User user)
         {
-            AppProvider.UserProvider.Update(user);
-            return RedirectToAction("Index");
+			if (AppProvider.UserProvider.Update(user))
+			{
+				return RedirectToAction("Index");
+			}
+			return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Delete(int id)
