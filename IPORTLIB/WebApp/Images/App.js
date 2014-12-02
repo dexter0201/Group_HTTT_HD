@@ -199,7 +199,7 @@
 	            }
 	        }
 	    });
-	    $("input").bind('click', function () {
+	    $("input.detail_loan").bind('click', function () {
 	        $.ajax({
 	            type: "POST",
 	            url: "/Circulation/DetailLoan/" + $(this).val(),
