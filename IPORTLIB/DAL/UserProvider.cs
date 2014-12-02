@@ -57,12 +57,12 @@ namespace DAL
             {
                 UserId = (int)reader["UserId"],
                 UserNo = (string)reader["UserNo"],
-                DepartmentId = (int)reader["DepartmentId"],
-                DepartmentName = (string)reader["DepartmentName"],
+                DepartmentId = reader["DepartmentId"].ToString() != "" ? (int)reader["DepartmentId"] : -1,
+                DepartmentName = reader["DepartmentName"] != null ? (string)reader["DepartmentName"] : "",
                 FirstName = (string)reader["FirstName"],
                 LastName = (string)reader["LastName"],
-                AttachmentId = (int)reader["AttachmentId"],
-                Url = (string)reader["Url"]
+                AttachmentId = reader["AttachmentId"].ToString() != "" ? (int)reader["AttachmentId"] : -1,
+                Url = reader["Url"].ToString() != "" ? (string)reader["Url"] : ""
             };
         }
 
@@ -149,12 +149,11 @@ namespace DAL
 
         protected override void SetUpdateParams(SqlCommand cmd, User user)
         {
-            cmd.CommandText = "UpdateUser";
+			cmd.CommandText = "UpdateUser";
             cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = user.UserId;
             cmd.Parameters.Add("@DepartmentId", SqlDbType.Int).Value = user.DepartmentId;
             cmd.Parameters.Add("@ProvinceId", SqlDbType.Int).Value = user.ProvinceId;
             cmd.Parameters.Add("@GroupId", SqlDbType.Int).Value = user.GroupId;
-            cmd.Parameters.Add("@AttachmentId", SqlDbType.Int).Value = user.AttachmentId;
             cmd.Parameters.Add("@UserNo", SqlDbType.VarChar).Value = user.UserNo;
             cmd.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = user.FirstName;
             cmd.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = user.LastName;
@@ -164,6 +163,7 @@ namespace DAL
             cmd.Parameters.Add("@Phone", SqlDbType.VarChar).Value = user.Phone;
             cmd.Parameters.Add("@IdentityCard", SqlDbType.VarChar).Value = user.IdentityCard;
             cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = user.Email;
+			cmd.Parameters.Add("@AttachmentId", SqlDbType.Int).Value = user.AttachmentId;
         }
 
         protected override void SetDeleteParams(SqlCommand cmd, int UserId)

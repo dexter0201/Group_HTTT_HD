@@ -60,6 +60,22 @@
 		}
 	});
 
+	// delete image
+	$("#images .delete").click(function () {
+		var _data = { AttachmentID: $(this).attr("value") };
+		$.ajax({
+			url: "/Attachment/DeleteAttachment",
+			type: "POST",
+			data: _data
+		}).success(function (dataResponsive) {
+			if (dataResponsive != -1) {
+				$("#image_" + dataResponsive).remove();
+			} else {
+				alert("Delete error");
+			}
+		});
+	});
+
     // Minh Thanh
 	var options = {
 	    chart: {
@@ -186,20 +202,20 @@
 	    }
 	});
 
-	$(function () {
-	    $("#dialog-detail").dialog({
-	        width: 700,
-	        height: 500,
-	        autoOpen: false,
-	        modal: true,
-	        title: "Chi tiết mượn sách",
-	        buttons: {
-	            Close: function () {
-	                $("#dialog-detail").dialog('close');
-	            }
+	$("#dialog-detail").dialog({
+	    width: 700,
+	    height: 500,
+	    autoOpen: false,
+	    modal: true,
+	    title: "Chi tiết mượn sách",
+	    buttons: {
+	        Close: function () {
+	            $("#dialog-detail").dialog('close');
 	        }
+	    }
 	    });
-	    $("input").bind('click', function () {
+
+	    $("input.detail_loan").bind('click', function () {
 	        $.ajax({
 	            type: "POST",
 	            url: "/Circulation/DetailLoan/" + $(this).val(),
@@ -210,7 +226,20 @@
 	            }
 	        });
 
-	    });
+	    
 	});
 
+
+	//$("input").bind('click', function () {
+	//    $.ajax({
+	//        type: "POST",
+	//        url: "/Circulation/DetailLoan/" + $(this).val(),
+	//        contentType: "application/json; charset=utf-8",
+	//        success: function (data) {
+	//            $("#dialog-detail").html(data);
+	//            $("#dialog-detail").dialog("open");
+	//        }
+	//    });
+
+	//});
 });

@@ -3,6 +3,7 @@
   <menu id="Reader" module="Phân hệ quản lý độc giả">
     <item value="Thêm mới độc giả" url="/Reader/Create" />
     <item value="Tìm kiếm độc giả" url="/Reader" />
+	<item value="Quản lý hình độc giả" url="/Reader/ImageManage" />
     <item value="In thẻ độc giả" url="/Reader/Print" />
     <item value="Tạo báo cáo" url="/Reader/Report" />
   </menu>
