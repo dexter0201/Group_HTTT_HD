@@ -196,8 +196,9 @@
 	        Close: function () {
 	            $("#dialog-detail").dialog('close');
 	        }
-<<<<<<< HEAD
+	    }
 	    });
+
 	    $("input.detail_loan").bind('click', function () {
 	        $.ajax({
 	            type: "POST",
@@ -208,10 +209,10 @@
 	                $("#dialog-detail").dialog("open");
 	            }
 	        });
-=======
-	    }
+
+	    
 	});
->>>>>>> 4f7a214742a6df6a089ae868734e30d32479837c
+
 
 	$("input").bind('click', function () {
 	    $.ajax({
