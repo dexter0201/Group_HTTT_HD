@@ -52,9 +52,15 @@ namespace DAL
             throw new System.NotImplementedException();
         }
 
+		/// <summary>
+		/// set parameters for deleteAttachment
+		/// </summary>
+		/// <param name="cmd">SqlCommand</param>
+		/// <param name="id">int</param>
         protected override void SetDeleteParams(SqlCommand cmd, int id)
         {
-            throw new System.NotImplementedException();
+			cmd.CommandText = "DeleteAttachmentById";
+			cmd.Parameters.Add("@AttachmentId", SqlDbType.Int).Value = id;
         }
 
         protected override void SetGetParams(SqlCommand cmd, int id)

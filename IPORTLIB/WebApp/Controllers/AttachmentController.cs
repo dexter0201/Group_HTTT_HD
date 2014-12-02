@@ -37,5 +37,15 @@ namespace WebApp.Controllers
             AppProvider.AttachmentProvider.Insert(attachment);            
             return Json(attachment);
         }
+
+		[HttpPost]
+		public int DeleteAttachment(int AttachmentID)
+		{
+			if (AppProvider.AttachmentProvider.Delete(AttachmentID)) {
+				return AttachmentID;
+			}
+
+			return -1;
+		}
     }
 }

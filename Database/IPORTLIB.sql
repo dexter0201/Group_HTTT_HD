@@ -383,6 +383,17 @@ AS
 	FROM Attachments LEFT JOIN Users ON Attachments.AttachmentId = Users.AttachmentId
 GO
 
+CREATE PROCEDURE DeleteAttachmentById
+(
+	@AttachmentId INT
+)
+AS
+	DELETE Attachments WHERE AttachmentId = @AttachmentId;
+	UPDATE Users
+	SET Users.AttachmentId = NULL
+	WHERE Users.AttachmentId = @AttachmentId;
+GO
+
 --Drop Table Users;
 Create Table Users
 (

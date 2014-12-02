@@ -60,6 +60,22 @@
 		}
 	});
 
+	// delete image
+	$("#images .delete").click(function () {
+		var _data = { AttachmentID: $(this).attr("value") };
+		$.ajax({
+			url: "/Attachment/DeleteAttachment",
+			type: "POST",
+			data: _data
+		}).success(function (dataResponsive) {
+			if (dataResponsive != -1) {
+				$("#image_" + dataResponsive).remove();
+			} else {
+				alert("Delete error");
+			}
+		});
+	});
+
     // Minh Thanh
 	var options = {
 	    chart: {
