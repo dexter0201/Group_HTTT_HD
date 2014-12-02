@@ -197,7 +197,22 @@
 	            $("#dialog-detail").dialog('close');
 	        }
 	    }
+	    });
+
+	    $("input.detail_loan").bind('click', function () {
+	        $.ajax({
+	            type: "POST",
+	            url: "/Circulation/DetailLoan/" + $(this).val(),
+	            contentType: "application/json; charset=utf-8",
+	            success: function (data) {
+	                $("#dialog-detail").html(data);
+	                $("#dialog-detail").dialog("open");
+	            }
+	        });
+
+	    
 	});
+
 
 	$("input").bind('click', function () {
 	    $.ajax({
