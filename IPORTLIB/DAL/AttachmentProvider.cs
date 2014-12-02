@@ -13,7 +13,7 @@ namespace DAL
 				AttachmentId = (int)reader["AttachmentId"],
 				AttachmentTypeId = (int)reader["AttachmentTypeId"],
 				Url = (string)reader["Url"],
-				UserNo = reader["UserNo"].ToString() != "" ? (string)reader["UserNo"] : "Unknown"
+				UserNo = reader.GetSchemaTable().Select("ColumnName='UserNo'").Length > 0 && reader["UserNo"].ToString() != "" ? (string)reader["UserNo"] : "Unknown"
 			};
         }
 
@@ -65,7 +65,8 @@ namespace DAL
 
         protected override void SetGetParams(SqlCommand cmd, int id)
         {
-            throw new System.NotImplementedException();
+			cmd.CommandText = "GetAttachmentById";
+			cmd.Parameters.Add("@AttachmentId", SqlDbType.Int).Value = id;
         }
 
 		public List<Attachment> Gets(int pageSize, int pageIndex)

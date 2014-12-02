@@ -21,6 +21,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Connection = cn;
                 SetGetParams(cmd, id);
                 cn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();

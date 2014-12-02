@@ -41,7 +41,10 @@ namespace WebApp.Controllers
 		[HttpPost]
 		public int DeleteAttachment(int AttachmentID)
 		{
+			Attachment _curAttach = AppProvider.AttachmentProvider.Get(AttachmentID);
+
 			if (AppProvider.AttachmentProvider.Delete(AttachmentID)) {
+				System.IO.File.Delete(Server.MapPath("/Uploads/" + _curAttach.Url));
 				return AttachmentID;
 			}
 
