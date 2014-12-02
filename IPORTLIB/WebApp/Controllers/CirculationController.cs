@@ -120,7 +120,16 @@ namespace WebApp.Controllers
         }
         public ActionResult SearchUserLoanByNo(Search search)
         {
-            List<User> model = AppProvider.UserProvider.GetUsersLoanByUserNo(search.Keyword);
+            List<User> model = null;
+            if(search.choose == "no")
+                 model = AppProvider.UserProvider.GetUsersLoanByUserNo(search.Keyword);
+            else
+            {
+                if(search.choose == "book")
+                {
+                    model = AppProvider.UserProvider.GetUsersLoanByBookNumber(search.Keyword);
+                }
+            }
             return PartialView("LoanMonitoring", model);
         }
     }

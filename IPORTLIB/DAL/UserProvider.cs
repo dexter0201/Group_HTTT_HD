@@ -300,6 +300,19 @@ namespace DAL
             }
 
         }
+        public List<User> GetUsersLoanByBookNumber(string book)
+        {
+            using (SqlConnection cn = new SqlConnection(Config.ConnectString))
+            {
+                SqlCommand cmd = new SqlCommand("GetUserLoanByBookNum", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@booknum", SqlDbType.VarChar).Value = book;
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                return Gets(reader);
+            }
+
+        }
         public List<ReportOutOfDateLoans> GetDetailLoanByUserid(int id)
         {
             using (SqlConnection cn = new SqlConnection(Config.ConnectString))
