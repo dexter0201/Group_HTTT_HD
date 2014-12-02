@@ -186,31 +186,29 @@
 	    }
 	});
 
-	$(function () {
-	    $("#dialog-detail").dialog({
-	        width: 700,
-	        height: 500,
-	        autoOpen: false,
-	        modal: true,
-	        title: "Chi tiết mượn sách",
-	        buttons: {
-	            Close: function () {
-	                $("#dialog-detail").dialog('close');
-	            }
+	$("#dialog-detail").dialog({
+	    width: 700,
+	    height: 500,
+	    autoOpen: false,
+	    modal: true,
+	    title: "Chi tiết mượn sách",
+	    buttons: {
+	        Close: function () {
+	            $("#dialog-detail").dialog('close');
 	        }
-	    });
-	    $("input").bind('click', function () {
-	        $.ajax({
-	            type: "POST",
-	            url: "/Circulation/DetailLoan/" + $(this).val(),
-	            contentType: "application/json; charset=utf-8",
-	            success: function (data) {
-	                $("#dialog-detail").html(data);
-	                $("#dialog-detail").dialog("open");
-	            }
-	        });
-
-	    });
+	    }
 	});
 
+	$("input").bind('click', function () {
+	    $.ajax({
+	        type: "POST",
+	        url: "/Circulation/DetailLoan/" + $(this).val(),
+	        contentType: "application/json; charset=utf-8",
+	        success: function (data) {
+	            $("#dialog-detail").html(data);
+	            $("#dialog-detail").dialog("open");
+	        }
+	    });
+
+	});
 });

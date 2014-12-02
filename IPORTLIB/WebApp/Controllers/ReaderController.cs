@@ -86,5 +86,10 @@ namespace WebApp.Controllers
                 return RedirectToAction("Index", "Reader");
             return default(ActionResult);
         }
+
+		public ActionResult ImageManage()
+		{
+			return View();
+		}
     }
 }
