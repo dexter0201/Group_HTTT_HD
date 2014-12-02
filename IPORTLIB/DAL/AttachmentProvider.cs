@@ -12,7 +12,8 @@ namespace DAL
             return new Attachment {
 				AttachmentId = (int)reader["AttachmentId"],
 				AttachmentTypeId = (int)reader["AttachmentTypeId"],
-				Url = (string)reader["Url"]
+				Url = (string)reader["Url"],
+				UserNo = reader["UserNo"].ToString() != "" ? (string)reader["UserNo"] : "Unknown"
 			};
         }
 

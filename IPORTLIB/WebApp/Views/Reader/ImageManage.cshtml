@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<DTO.Attachment>
+
+@{
     ViewBag.Title = "Quản lý hình độc giả";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -11,7 +13,18 @@
 
 	<article id="images">
 		<ul>
-			<li id="image1">
+			@foreach (var attach in Model)
+			{
+				<li id="image_@attach.AttachmentId">
+					<a href="" class="img">
+						<img src="/Uploads/@attach.Url" class="thumbnail" />
+					</a>
+					<a class="icon delete" onclick="deleteImage(@attach.AttachmentId);"></a>
+					<span class="imgName">UserNumber: @attach.UserNo</span>
+				</li>
+			}
+
+			@*<li id="image1">
 				<a class="img" alt="2DrrV7Z.png" title="2DrrV7Z.png">
 					<img src="/Uploads/betac7.jpg" class="thumbnail">
 				</a>
@@ -42,7 +55,7 @@
 				<a class="icon delete" onclick="DelImg(5);"></a>
 				<a class="icon fav disable" onclick="FavImg(5);"></a>
 				<span class="imgName">Avata2.png</span>
-			</li>
+			</li>*@
 		</ul>
 	</article>
 </div>

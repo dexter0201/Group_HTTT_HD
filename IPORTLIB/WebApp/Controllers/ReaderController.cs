@@ -87,11 +87,11 @@ namespace WebApp.Controllers
             return default(ActionResult);
         }
 
-		public ActionResult ImageManage()
+		public ActionResult ImageManage(int pageIndex = 0)
 		{
+			List<Attachment> _listAttachments = AppProvider.AttachmentProvider.Gets(pageIndex, 10);
 
-
-			return View();
+			return View(_listAttachments);
 		}
     }
 }

@@ -379,7 +379,8 @@ go
 
 CREATE PROCEDURE GetAttachments
 AS
-	SELECT * FROM Attachments
+	SELECT Attachments.AttachmentId, Url, Users.UserNo, AttachmentTypeId
+	FROM Attachments LEFT JOIN Users ON Attachments.AttachmentId = Users.AttachmentId
 GO
 
 --Drop Table Users;
