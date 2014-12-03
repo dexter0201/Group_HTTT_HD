@@ -198,7 +198,7 @@
 	        }
 	    }
 	    });
-
+        //detail loan
 	    $("input.detail_loan").bind('click', function () {
 	        $.ajax({
 	            type: "POST",
