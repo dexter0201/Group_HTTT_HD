@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DTO.Attachment>
+
+@{
+    ViewBag.Title = "Quản lý hình độc giả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="page-wrapper">
+	<h1>Quản lý hình độc giả</h1>
+	<article id="images">
+		<ul></ul>
+	</article>
+
+	<article id="images">
+		<ul>
+			@foreach (var attach in Model)
+			{
+				<li id="image_@attach.AttachmentId">
+					<a href="" class="img">
+						<img src="/Uploads/@attach.Url" class="thumbnail" />
+					</a>
+					<a class="icon delete" value="@attach.AttachmentId"></a>
+					<span class="imgName">User number: @attach.UserNo</span>
+				</li>
+			}
+		</ul>
+	</article>
+</div>
+<!-- /#page-wrapper -->

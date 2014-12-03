@@ -74,10 +74,13 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(User user)
+		public ActionResult Update(User user)
         {
-            AppProvider.UserProvider.Update(user);
-            return RedirectToAction("Index");
+			if (AppProvider.UserProvider.Update(user))
+			{
+				return RedirectToAction("Index");
+			}
+			return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Delete(int id)
@@ -87,9 +90,11 @@ namespace WebApp.Controllers
             return default(ActionResult);
         }
 
-		public ActionResult ImageManage()
+		public ActionResult ImageManage(int pageIndex = 0)
 		{
-			return View();
+			List<Attachment> _listAttachments = AppProvider.AttachmentProvider.Gets(pageIndex, 10);
+
+			return View(_listAttachments);
 		}
     }
 }

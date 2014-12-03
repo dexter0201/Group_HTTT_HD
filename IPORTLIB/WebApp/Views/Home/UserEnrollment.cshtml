@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Đăng Ký Sử Dụng Thư Viện";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Đăng Ký Học Sử Dụng Thư Viện</h2>
+<style>
+    #UserEnrollment {
+        width:500px;
+        margin:auto;
+    }
+</style>
+<div id="UserEnrollment">
+    <form role="form" method="post" action="/UserEnrollment/Create">
+        <div class="form-group input-group">
+			<span class="input-group-addon">
+			Mã số&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;<span class="required">*</span>
+			</span>
+		    <input class="form-control" placeholder="Điền mã số SV/NV" name="UserNo">
+		</div>
+        <div class="form-group input-group">
+		    <span class="input-group-addon">
+			    Họ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="required">*</span>
+			</span>
+			<input class="form-control" placeholder="Điền họ độc giả" name="FirstName">
+		</div>
+        <div class="form-group input-group">
+		    <span class="input-group-addon">
+			    Tên&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="required">*</span>
+			</span>
+			<input class="form-control" placeholder="Điền tên độc giả" name="LasttName">
+		</div>
+        <div class="form-group input-group">
+		    <span class="input-group-addon">
+			    Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="required">*</span>
+			</span>
+			<input class="form-control" placeholder="Địa chỉ email" name="Email">
+		</div>
+        <div class="form-group input-group">
+		    <span class="input-group-addon">
+			    Điện Thoại&nbsp;&nbsp;&nbsp;
+                <span class="required">*</span>
+			</span>
+			<input class="form-control" placeholder="Số điện thoại" name="Phone">
+		</div>
+        <div class="form-group input-group">
+			<span class="input-group-addon">
+			Khoa/Đơn vị&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span>
+			@Html.DropDownList("DepartmentId", null, new { @class = "form-control" })
+		</div>
+        <div class="form-group input-group">
+			<span class="input-group-addon">
+			Nhóm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span>
+			@Html.DropDownList("GroupId", null, new { @class = "form-control" })
+		</div>
+        <div class="row" style="text-align: center; margin-bottom: 10px;">
+			<button type="submit" class="btn btn-primary">Lưu</button>
+			<button type="reset" class="btn btn-default">Nhập lại</button>
+		</div>
+	</form>
+</div>
+    

@@ -24,6 +24,11 @@ namespace WebApp.Controllers
         {
             return View();
         }
-
+        public ActionResult UserEnrollment()
+        {
+            ViewBag.GroupId = new SelectList(AppProvider.GroupProvider.Gets(), "GroupId", "GroupName", Config.defaultSelectedGroup);
+            ViewBag.DepartmentId = new SelectList(AppProvider.DeparmentProvider.Gets(), "DepartmentId", "DepartmentName", Config.defaultSelectedDepartment);
+            return View();
+        }
     }
 }

@@ -129,6 +129,7 @@
     <Compile Include="Controllers\ReaderController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Controllers\TopicController.cs" />
+    <Compile Include="Controllers\UserEnrollmentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -338,6 +339,7 @@
     <EmbeddedResource Include="Report\ReportUsersLoan.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Home\UserEnrollment.cshtml" />
     <Content Include="Views\Reader\ImageManage.cshtml" />
   </ItemGroup>
   <PropertyGroup>
