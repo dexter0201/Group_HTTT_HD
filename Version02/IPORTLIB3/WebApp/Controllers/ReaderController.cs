@@ -10,7 +10,10 @@ namespace WebApp.Controllers
     {
         public ActionResult Index(int id = 1)
         {
-            UtilityUser model = new UtilityUser { Users = AppProvider.User.Gets(id - 1), Count = AppProvider.User.Page() };
+            UtilityUser model = new UtilityUser {
+				Users = AppProvider.User.Gets(id - 1),
+				Count = AppProvider.User.Page()
+			};
             return View(model);
         }
 

@@ -8,3 +8,13 @@ D:\HK7\PTHTTT\IPORTLIB3\BLL\bin\Debug\IDAL.pdb
 D:\HK7\PTHTTT\IPORTLIB3\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\HK7\PTHTTT\IPORTLIB3\BLL\obj\Debug\BLL.dll
 D:\HK7\PTHTTT\IPORTLIB3\BLL\obj\Debug\BLL.pdb
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\bin\Debug\BLL.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\bin\Debug\BLL.pdb
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\bin\Debug\By1112292.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\bin\Debug\DTO.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\bin\Debug\IDAL.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\bin\Debug\DTO.pdb
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\bin\Debug\IDAL.pdb
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\obj\Debug\BLL.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\BLL\obj\Debug\BLL.pdb

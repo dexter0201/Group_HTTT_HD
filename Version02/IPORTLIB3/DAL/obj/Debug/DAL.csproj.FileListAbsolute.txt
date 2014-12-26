@@ -11,3 +11,8 @@ D:\HK7\PTHTTT\IPORTLIB3\WebApp\Plugins\DAL.pdb
 D:\HK7\PTHTTT\IPORTLIB3\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\HK7\PTHTTT\IPORTLIB3\DAL\obj\Debug\DAL.dll
 D:\HK7\PTHTTT\IPORTLIB3\DAL\obj\Debug\DAL.pdb
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\WebApp\Plugins\DAL.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\WebApp\Plugins\DAL.pdb
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\DAL\obj\Debug\DAL.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\DAL\obj\Debug\DAL.pdb

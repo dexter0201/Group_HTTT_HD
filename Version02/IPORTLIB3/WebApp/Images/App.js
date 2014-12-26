@@ -76,6 +76,18 @@
 		});
 	});
 
+	// generate barcode
+	$("#btnGenerateBarcode").click(function () {
+		var _data = 'data=' + $('#UserNo').val();
+		$.ajax({
+			url: '/Helper/GenerateBarcode',
+			type: 'GET',
+			data: _data
+		}).success(function (data) {
+			$("#barCodeResult").attr('src', '/Uploads/UsersBarcode/' + data);
+		});
+	});
+
     // Thong Ke Doc Gia
 	var options = {
 	    chart: {

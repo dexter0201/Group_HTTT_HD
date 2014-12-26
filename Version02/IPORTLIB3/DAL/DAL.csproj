@@ -51,6 +51,7 @@
     <Compile Include="CurrencyRepository.cs" />
     <Compile Include="DepartmentRepository.cs" />
     <Compile Include="GroupRepository.cs" />
+    <Compile Include="IAttachmentRepository.cs" />
     <Compile Include="LanguageRepository.cs" />
     <Compile Include="LoanDetailRepository.cs" />
     <Compile Include="LoanRepository.cs" />
