@@ -1,0 +1,22 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.Period>
+@{
+    ViewBag.Title = "Period";
+}
+<h2>@Language.ManagePeriod</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.PeriodName</th><th>@Language.Chapter</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+		<td>@item.PeriodName</td>
+		<td>@item.Chapter</td>
+
+        <td><a href="/Period/Edit/@item.PeriodId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/Period/Delete/@item.PeriodId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

@@ -1,0 +1,41 @@
+@using WebApp.Resources
+@model DTO.Config
+@{
+    ViewBag.Title = Language.Edit;
+}
+<h2>@Language.Edit</h2>
+<form method="post" action="/Config/Edit" class="frm">
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.ConfigId)
+    <p>
+        <label>@Language.ConfigName</label>
+        @Html.TextBoxFor(model => model.ConfigName, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.ConfigName)
+    </p>
+    <p>
+        <label>@Language.DataType</label>
+        @Html.TextBoxFor(model => model.DataType, new { @class = "txtdate" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.DataType)
+    </p>
+    <p>
+        <label>@Language.Value</label>
+        @Html.TextBoxFor(model => model.Value, new { @class = "txtavg" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.Value)
+    </p>
+    <p>
+        <label>@Language.Status</label>
+        @Html.DropDownList("StatusId", String.Empty)
+		<span class="required">*</span>
+    </p>
+
+    <p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

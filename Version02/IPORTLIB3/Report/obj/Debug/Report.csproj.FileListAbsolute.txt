@@ -1,0 +1,14 @@
+D:\HK7\PTHTTT\IPORTLIB3\Report\bin\Debug\Report.dll
+D:\HK7\PTHTTT\IPORTLIB3\Report\bin\Debug\Report.pdb
+D:\HK7\PTHTTT\IPORTLIB3\Report\bin\Debug\BLL.dll
+D:\HK7\PTHTTT\IPORTLIB3\Report\bin\Debug\By1112292.dll
+D:\HK7\PTHTTT\IPORTLIB3\Report\bin\Debug\DTO.dll
+D:\HK7\PTHTTT\IPORTLIB3\Report\bin\Debug\IDAL.dll
+D:\HK7\PTHTTT\IPORTLIB3\Report\bin\Debug\BLL.pdb
+D:\HK7\PTHTTT\IPORTLIB3\Report\bin\Debug\DTO.pdb
+D:\HK7\PTHTTT\IPORTLIB3\Report\bin\Debug\IDAL.pdb
+D:\HK7\PTHTTT\IPORTLIB3\Report\obj\Debug\Report.csprojResolveAssemblyReference.cache
+D:\HK7\PTHTTT\IPORTLIB3\Report\obj\Debug\RdlCompile.cache
+D:\HK7\PTHTTT\IPORTLIB3\Report\obj\Debug\RdlCompile.compiled
+D:\HK7\PTHTTT\IPORTLIB3\Report\obj\Debug\Report.dll
+D:\HK7\PTHTTT\IPORTLIB3\Report\obj\Debug\Report.pdb

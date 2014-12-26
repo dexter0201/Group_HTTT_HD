@@ -1,0 +1,24 @@
+@using WebApp.Resources
+@model DTO.Major
+@{
+    ViewBag.Title = Language.Edit;
+}
+<h2>@Language.Edit</h2>
+<form method="post" action="/Major/Edit" class="frm">
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.MajorId)
+    <p>
+        <label>@Language.MajorName</label>
+        @Html.TextBoxFor(model => model.MajorName, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.MajorName)
+    </p>
+
+    <p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

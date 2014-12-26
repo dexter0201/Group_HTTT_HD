@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DTO.ReportOutOfDateLoans>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DetailLoan</title>
+</head>
+<body>
+    <div style="float:left"><img src="~/Images/pic/IMG_20141117_102612_webcamera360_20141117111649.jpg" /></div>
+    @foreach (var item in Model)
+    {
+        <div style="float:left; margin:20px">
+            <h4>MSSV: @item.UserNo</h4>
+            <h4>Họ và tên: @item.FirstName @item.LastName</h4>
+            <h4>Khoa: @item.DepartmentName</h4>
+            <a style="width:auto" class="btn btn-warning" href="#">Nhắc nhở</a>
+        </div>
+        break;
+    }
+    
+    
+    <table class="table">
+        <tr>
+            <th>
+                Tên sách
+            </th>
+            <th>
+               Mã số
+            </th>
+            <th>
+               Ngày mượn 
+            </th>
+            <th>
+               Ngày trả
+            </th>
+        </tr>
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberSpecific)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateLoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePay)
+            </td>
+            
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@using WebApp.Resources;
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = Language.ManageAccount;
+}
+<h2>@Language.ManageAccount</h2>
+<div class="info_content">
+    <p>@Language.NumberOnline : @System.Web.Security.Membership.GetNumberOfUsersOnline()</p>
+    <table class="table">
+        <tr><th>@Language.UserName</th><th>@Language.Email</th><th>@Language.CreatedDate</th><th>@Language.IsApproved</th><th>@Language.IsLockectOut</th><th>@Language.Edit</th><th>@Language.Delete</th></tr>
+        @foreach (MembershipUser item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@item.CreationDate</td>
+                <td><input type="checkbox" checked="@item.IsApproved" /></td>
+                <td><input type="checkbox" checked="@item.IsLockedOut" /></td>
+                <td><a href="/ManageAccount/Edit/@item.UserName"><img alt="Edit" src="/Images/Edit.gif" /></a></td>
+                <td><a href="/ManageAccount/Delete/@item.UserName" onclick="return IsDelete()"><img alt="Delete" src="/Images/Delete.gif" /></a></td>
+            </tr>
+        }
+        <tr><td colspan="4">@Language.Total</td><td>@Model.Count</td><td colspan="2"></td></tr>
+    </table>
+</div>

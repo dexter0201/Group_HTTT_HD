@@ -1,0 +1,32 @@
+@using WebApp.Resources
+@model DTO.LoanDetail
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/LoanDetail/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.Loan</label>
+        @Html.DropDownList("LoanId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Book</label>
+        @Html.DropDownList("BookId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.DatePay</label>
+        @Html.TextBoxFor(model => model.DatePay, new { @class = "txtdate" })    
+        @Html.ValidationMessageFor(model => model.DatePay)
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

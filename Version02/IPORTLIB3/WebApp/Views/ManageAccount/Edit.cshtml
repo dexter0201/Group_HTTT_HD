@@ -1,0 +1,34 @@
+﻿@using WebApp.Resources;
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Edit";
+}
+@{
+     string username = ViewContext.RouteData.Values["id"].ToString();
+   }
+<script>
+    function updateRole(val) {
+        document.forms["role"].setAttribute('action', '/ManageAccount/Update/' + '@username' + '-' + val.value + '-' + val.checked);
+        document.forms["role"].submit();
+    }
+</script>
+<h2>@Language.Permision: @username</h2>
+<div class="frm">
+    @using (Html.BeginForm("Update/" + username, "ManageAccount", FormMethod.Post, new { name = "role" }))
+    {
+        foreach (var item in Model)
+        {
+            <p><label>@item</label>
+            @if (Roles.IsUserInRole(username, item))
+            {
+                <input type="checkbox" value="@item" checked="checked" onclick="updateRole(this)"/>
+            }
+            else
+            {
+                <input type="checkbox" value="@item" onclick="updateRole(this)"/>
+            }
+            </p>    
+        }
+    }
+</div>
+<a href="/ManageAccount">@Language.Back</a>

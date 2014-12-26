@@ -1,0 +1,84 @@
+@using WebApp.Resources
+@model DTO.User
+@{
+    ViewBag.Title = Language.Edit;
+}
+<h2>@Language.Edit</h2>
+<form method="post" action="/User/Edit" class="frm">
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.UserId)
+    <p>
+        <label>@Language.Department</label>
+        @Html.DropDownList("DepartmentId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Province</label>
+        @Html.DropDownList("ProvinceId", String.Empty)
+    </p>
+    <p>
+        <label>@Language.Group</label>
+        @Html.DropDownList("GroupId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Attachment</label>
+        @Html.DropDownList("AttachmentId", String.Empty)
+    </p>
+    <p>
+        <label>@Language.UserNo</label>
+        @Html.TextBoxFor(model => model.UserNo, new { @class = "txtdate" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.UserNo)
+    </p>
+    <p>
+        <label>@Language.FirstName</label>
+        @Html.TextBoxFor(model => model.FirstName, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </p>
+    <p>
+        <label>@Language.LastName</label>
+        @Html.TextBoxFor(model => model.LastName, new { @class = "txtavg" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.LastName)
+    </p>
+    <p>
+        <label>@Language.Gender</label>
+        @Html.TextBoxFor(model => model.Gender, new { @class = "txtdate" })    
+        @Html.ValidationMessageFor(model => model.Gender)
+    </p>
+    <p>
+        <label>@Language.BirthDay</label>
+        @Html.TextBoxFor(model => model.BirthDay, new { @class = "txtdate" })    
+        @Html.ValidationMessageFor(model => model.BirthDay)
+    </p>
+    <p>
+        <label>@Language.Address</label>
+        @Html.TextBoxFor(model => model.Address, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Address)
+    </p>
+    <p>
+        <label>@Language.Phone</label>
+        @Html.TextBoxFor(model => model.Phone, new { @class = "txtavg" })    
+        @Html.ValidationMessageFor(model => model.Phone)
+    </p>
+    <p>
+        <label>@Language.IdentityCard</label>
+        @Html.TextBoxFor(model => model.IdentityCard, new { @class = "txtavg" })    
+        @Html.ValidationMessageFor(model => model.IdentityCard)
+    </p>
+    <p>
+        <label>@Language.Email</label>
+        @Html.TextBoxFor(model => model.Email, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Email)
+    </p>
+
+    <p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

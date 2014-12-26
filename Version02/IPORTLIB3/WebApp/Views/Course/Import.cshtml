@@ -1,0 +1,27 @@
+﻿@using WebApp.Resources;
+@model DTO.Course
+@{
+    ViewBag.Title = "Import";
+}
+<h2>Import</h2>
+@Model.Note
+<form method="post" action="/Course/Import/@ViewContext.RouteData.Values["id"]" enctype="multipart/form-data">
+    <p>
+        <input type="radio" name="option" value="0" checked="checked" /><span>@Language.Excel</span>
+        <input type="radio" name="option" value="1" /><span>@Language.Word</span>
+    </p>
+    <p>
+        <label>@Language.Attachment</label>
+        <input type="file" name="file" id="file" />
+    </p>
+    <p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Upload" />
+    </p>
+</form>
+<table>
+@foreach (var item in Model.UserEnrolls)
+{
+    <tr><td>@item.FirstName</td><td>@item.LastName</td></tr>
+}
+</table>

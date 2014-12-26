@@ -1,0 +1,77 @@
+﻿@using WebApp.Resources;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Contents/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Contents/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Images/jquery-ui.css">
+    <link href="/Images/Style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="top">
+        <ul class="wrapper">
+            @if (Request.IsAuthenticated)
+            {
+                <li>@Language.Welcome <strong>@User.Identity.Name</strong></li>
+                <li>@Html.ActionLink(@Language.LogOn, "LogOff", "Account")</li>
+                <li><a href="/Reader">@Language.Admin</a></li>
+            }
+            else
+            {
+                <li>@Html.ActionLink("Log On", "LogOn", "Account")</li>
+            }
+            
+        </ul>
+    </div>
+    <div id="banner">
+        <h1 class="wrapper">@Language.Title</h1>
+    </div>
+    <div id="menu">
+        <ul class="wrapper">
+            <li><a href="/">@Language.Home</a></li>
+            <li><a href="#">@Language.About</a></li>
+            <li><a href="#">@Language.Schedule</a></li>
+            <li><a href="#">@Language.News</a></li>
+            <li><a href="#">@Language.Event</a></li>
+            <li><a href="#">@Language.Help</a></li>
+            <li><a href="/Home/UserEnrollment">@Language.UserEnroll</a></li>
+        </ul>
+    </div>
+    <div id="main" class="wrapper">
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <div id="footer-content" class="wrapper">
+            <div class="box">
+                <h3>ĐHQG-HCM</h3>
+                <ul>
+                    <li><a href="http://vnuhcm.edu.vn">Đại học Quốc gia Tp.HCM</a></li>
+                    <li><a href="#">Trường ĐH Bách Khoa</a></li>
+                    <li><a href="#">Trường ĐH KHTN</a></li>
+                    <li><a href="#">Trường ĐH KHXH & NV</a></li>
+                    <li><a href="#">Trường ĐH Quốc tế</a></li>
+                    <li><a href="#">Trường ĐH CNTT</a></li>
+                    <li><a href="#">Trường ĐH Kinh tế – Luật</a></li>
+                    <li><a href="#">Khoa Y</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>Các đơn vị ĐHQG-HCM</h3>
+                <ul>
+                    <li><a href="#">Viện Đào tạo Quốc tế</a></li>
+                    <li><a href="#">Viện Môi Trường&Tài Nguyên</a></li>
+                    <li><a href="#">Khu Công nghệ Phần mềm</a></li>
+                    <li><a href="#">Quỹ Phát triển ĐHQG-HCM</a></li>
+                    <li><a href="#">Nhà Xuất Bản ĐHQG-HCM</a></li>
+                </ul>
+            </div>
+            <div class="cls"></div>
+        </div>
+        <div id="footer-copyright">
+            <div class="wrapper">Coppyright &copy; Group 07</div>
+        </div>
+    </div>
+</body>
+</html>

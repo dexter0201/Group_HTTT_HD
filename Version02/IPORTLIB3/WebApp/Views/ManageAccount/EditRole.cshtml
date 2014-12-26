@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "EditRole";
+}
+<h2>EditRole</h2>
+<form class="frm" method="post" action="/ManageAccount/EditRole/@ViewContext.RouteData.Values["id"]">
+    <p>
+        <label>RoleName</label>
+        <input type="text" name="RoleName" id="RoleName" value="@ViewContext.RouteData.Values["id"]" />
+    </p>
+    <p><label>&nbsp;</label><input type="submit" value="Save" /></p>
+</form>

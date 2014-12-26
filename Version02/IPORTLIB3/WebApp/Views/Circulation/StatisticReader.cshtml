@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Thống kê độc giả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<form class="form-inline" method="post" name="report" id="drawchart">
+    <p>
+        <select class="form-control" name="choose" id="type">
+            <option value="type1">Thống kê số lượng độc giả theo khoa</option>
+            <option value="type2">Thống kê độc giả mượn sách theo năm</option>
+            <option value="type3">Thống kê độc giả mượn sách ở các cơ sở</option>
+            <option value="type4">Thống kê các độc giả trễ hẹn trả sách</option>
+        </select>
+        <input  type="submit" class="btn btn-default" value="Xem" />
+    <p>
+</form>
+<br />
+<div id="download"></div>
+<br />
+<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>

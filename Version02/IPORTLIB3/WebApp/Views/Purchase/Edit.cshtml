@@ -1,0 +1,28 @@
+@using WebApp.Resources
+@model DTO.Purchase
+@{
+    ViewBag.Title = Language.Edit;
+}
+<h2>@Language.Edit</h2>
+<form method="post" action="/Purchase/Edit" class="frm">
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.PurchaseId)
+    <p>
+        <label>@Language.Status</label>
+        @Html.DropDownList("StatusId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Note</label>
+        @Html.TextBoxFor(model => model.Note, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Note)
+    </p>
+
+    <p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

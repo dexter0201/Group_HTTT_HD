@@ -1,0 +1,121 @@
+@using WebApp.Resources
+@model DTO.Publication
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/Publication/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.Topic</label>
+        @Html.DropDownList("TopicId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Author</label>
+        @Html.DropDownList("AuthorId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Publisher</label>
+        @Html.DropDownList("PublisherId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.PublicationType</label>
+        @Html.DropDownList("PublicationTypeId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Major</label>
+        @Html.DropDownList("MajorId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Language</label>
+        @Html.DropDownList("LanguageId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Title</label>
+        @Html.TextBoxFor(model => model.Title, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.Title)
+    </p>
+    <p>
+        <label>@Language.SubTitle</label>
+        @Html.TextBoxFor(model => model.SubTitle, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.SubTitle)
+    </p>
+    <p>
+        <label>@Language.PublisherYear</label>
+        @Html.TextBoxFor(model => model.PublisherYear, new { @class = "txtdate" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.PublisherYear)
+    </p>
+    <p>
+        <label>@Language.Edition</label>
+        @Html.TextBoxFor(model => model.Edition, new { @class = "txtdate" })    
+        @Html.ValidationMessageFor(model => model.Edition)
+    </p>
+    <p>
+        <label>@Language.Copyright</label>
+        @Html.TextBoxFor(model => model.Copyright, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Copyright)
+    </p>
+    <p>
+        <label>@Language.Description</label>
+        @Html.TextBoxFor(model => model.Description, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Description)
+    </p>
+    <p>
+        <label>@Language.Size</label>
+        @Html.TextBoxFor(model => model.Size, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Size)
+    </p>
+    <p>
+        <label>@Language.Unit</label>
+        @Html.DropDownList("UnitId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Price</label>
+        @Html.TextBoxFor(model => model.Price, new { @class = "txtdate" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.Price)
+    </p>
+    <p>
+        <label>@Language.Currency</label>
+        @Html.DropDownList("CurrencyId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Quantity</label>
+        @Html.TextBoxFor(model => model.Quantity, new { @class = "txtdate" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.Quantity)
+    </p>
+    <p>
+        <label>@Language.NumberDewey</label>
+        @Html.TextBoxFor(model => model.NumberDewey, new { @class = "txtavg" })    
+        @Html.ValidationMessageFor(model => model.NumberDewey)
+    </p>
+    <p>
+        <label>@Language.ISBN</label>
+        @Html.TextBoxFor(model => model.ISBN, new { @class = "txtavg" })    
+        @Html.ValidationMessageFor(model => model.ISBN)
+    </p>
+    <p>
+        <label>@Language.Note</label>
+        @Html.TextBoxFor(model => model.Note, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Note)
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

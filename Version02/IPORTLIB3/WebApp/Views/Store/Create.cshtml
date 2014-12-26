@@ -1,0 +1,23 @@
+@using WebApp.Resources
+@model DTO.Store
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/Store/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.StoreName</label>
+        @Html.TextBoxFor(model => model.StoreName, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.StoreName)
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

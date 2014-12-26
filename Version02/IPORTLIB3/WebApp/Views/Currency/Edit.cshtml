@@ -1,0 +1,24 @@
+@using WebApp.Resources
+@model DTO.Currency
+@{
+    ViewBag.Title = Language.Edit;
+}
+<h2>@Language.Edit</h2>
+<form method="post" action="/Currency/Edit" class="frm">
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.CurrencyId)
+    <p>
+        <label>@Language.CurrencyName</label>
+        @Html.TextBoxFor(model => model.CurrencyName, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.CurrencyName)
+    </p>
+
+    <p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

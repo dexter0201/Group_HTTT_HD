@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Thiết lập qui định mượn trả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Thiết lập qui định mượn trả</h2>
+<table>
+    <table class="tbl">
+        <tr class="center">
+            <td colspan="4">Chọn nhóm độc giả:
+            <select class="choose">
+                <option>Sinh viên</option>
+                <option>Cao học</option>
+            </select>
+        </td>
+        </tr>
+        <tr>
+            <td><span class="required">*</span>Số tiền kí quĩ</td>
+            <td><input type="text" class="txtnumber" value="50000"/></td>
+            <td><span class="required">*</span>Số sách tối đa được mượn</td>
+            <td><input type="text" class="txtnumber" value="3"/></td>
+        </tr>
+        <tr>
+            <td><span class="required">*</span>Thời gian mượn</td>
+            <td><input type="text" class="txtnumber" value="7"/>&nbsp;ngày</td>
+            <td><span class="required">*</span>Thời gian gia hạn</td>
+            <td><input type="text" class="txtnumber" value="7"/>&nbsp;ngày</td>
+        </tr>
+        <tr>
+            <td><span class="required">*</span>Mượn quá hạn <=</td>
+            <td><input type="text" class="txtnumber" value="30"/>&nbsp;ngày</td>
+            <td><span class="required">*</span>Số tiền phạt</td>
+            <td><input type="text" class="txtnumber" value="1000"/>&nbsp;đ/cuốn/ngày</td>
+        </tr>
+        <tr>
+            <td><span class="required">*</span>Mượn quá hạn ></td>
+            <td><input type="text" class="txtnumber" value="30"/>&nbsp;ngày</td>
+            <td><span class="required">*</span>Số tiền phạt</td>
+            <td><input type="text" class="txtnumber" value="2000"/>&nbsp;đ/cuốn/ngày</td>
+        </tr>
+        <tr class="center">
+            <td colspan="4">
+                <input class="btn" type="submit" value="Đồng ý" />
+            </td>
+        </tr>
+    </table>
+</table>

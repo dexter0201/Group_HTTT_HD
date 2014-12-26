@@ -1,0 +1,24 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.Course>
+@{
+    ViewBag.Title = "Course";
+}
+<h2>@Language.ManageCourse</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.Note</th><th>@Language.Quantity</th><th>@Language.StartDate</th><th>@Language.EndDate</th><th>@Language.Import</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Note</td>
+		<td>@item.Quantity</td>
+		<td>@item.StartDate</td>
+		<td>@item.EndDate</td>
+        <td><a href="/Course/Import/@item.CourseId">Import</td>
+        <td><a href="/Course/Edit/@item.CourseId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/Course/Delete/@item.CourseId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

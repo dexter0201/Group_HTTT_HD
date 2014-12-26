@@ -1,0 +1,56 @@
+﻿@model WebApp.Models.UtilityUser
+@{
+    ViewBag.Title = "Tìm kiếm độc giả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script>
+    window.onload = function () {
+        var search = document.forms['search'];
+        search.onsubmit = function () {
+            var xhr = new XMLHttpRequest();
+            var keyword = document.getElementById('txtKeyword').value;
+            var obj = JSON.stringify({ 'Keyword': keyword });
+            var url = '/Reader/Search';
+            var choose = document.getElementById('choose');
+            if (choose.value == 'fullName') {
+                url = '/Reader/SearchByFullName';
+            }
+            xhr.open('POST', url);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('result').innerHTML = xhr.responseText;
+                }
+            }
+            xhr.send(obj);
+            return false;
+        }
+
+
+    }
+</script>
+<h2>Tìm kiếm độc giả</h2>
+<form class="form-inline" method="post" name="search" action="/Reader/SearchByFullName">
+    <p>
+        <select class="form-control" name="choose" id="choose">
+            <option value="fullName">Họ tên</option>
+            <option value="no">MSSV</option>
+        </select>
+        <input class="form-control" type="text" name="Keyword" id="txtKeyword" value="tuấn" size="70" />
+        <input class="btn btn-default" type="submit" value="Tìm" />
+    <p>
+</form>
+<div id="result">
+    @{Html.RenderPartial("Result");}
+    <div class="paging">
+        @{int n = Model.Count;}
+        @if (Model.Count > 20)
+        {
+            n = 20;
+        }
+        @for (int i = 1; i <= n; i++)
+        {
+            <span><a href="/Reader/Index/@i">@i</a></span>
+        }
+    </div>
+</div>

@@ -1,0 +1,43 @@
+@using WebApp.Resources
+@model DTO.OrderDetail
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/OrderDetail/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.Order</label>
+        @Html.DropDownList("OrderId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.PurchaseDetail</label>
+        @Html.DropDownList("PurchaseDetailId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Price</label>
+        @Html.TextBoxFor(model => model.Price, new { @class = "txtdate" })    
+        @Html.ValidationMessageFor(model => model.Price)
+    </p>
+    <p>
+        <label>@Language.Quantity</label>
+        @Html.TextBoxFor(model => model.Quantity, new { @class = "txtdate" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.Quantity)
+    </p>
+    <p>
+        <label>@Language.Status</label>
+        @Html.DropDownList("StatusId", String.Empty)
+		<span class="required">*</span>
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

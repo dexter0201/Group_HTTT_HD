@@ -1,0 +1,20 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.Order>
+@{
+    ViewBag.Title = "Order";
+}
+<h2>@Language.ManageOrder</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+
+        <td><a href="/Order/Edit/@item.OrderId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/Order/Delete/@item.OrderId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

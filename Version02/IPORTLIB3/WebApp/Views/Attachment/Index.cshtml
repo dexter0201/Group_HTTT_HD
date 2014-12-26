@@ -1,0 +1,21 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.Attachment>
+@{
+    ViewBag.Title = "Attachment";
+}
+<h2>@Language.ManageAttachment</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.Url</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+		<td>@item.Url</td>
+
+        <td><a href="/Attachment/Edit/@item.AttachmentId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/Attachment/Delete/@item.AttachmentId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

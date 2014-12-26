@@ -1,0 +1,27 @@
+@using WebApp.Resources
+@model DTO.Order
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/Order/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.Supplier</label>
+        @Html.DropDownList("SupplierId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Status</label>
+        @Html.DropDownList("StatusId", String.Empty)
+		<span class="required">*</span>
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

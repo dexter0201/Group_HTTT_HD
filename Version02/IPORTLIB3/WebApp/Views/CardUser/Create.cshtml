@@ -1,0 +1,46 @@
+@using WebApp.Resources
+@model DTO.CardUser
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/CardUser/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.User</label>
+        @Html.DropDownList("UserId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.CardUserNo</label>
+        @Html.TextBoxFor(model => model.CardUserNo, new { @class = "txtavg" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.CardUserNo)
+    </p>
+    <p>
+        <label>@Language.UserName</label>
+        @Html.TextBoxFor(model => model.UserName, new { @class = "txtavg" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.UserName)
+    </p>
+    <p>
+        <label>@Language.Password</label>
+        @Html.TextBoxFor(model => model.Password, new { @class = "txtavg" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.Password)
+    </p>
+    <p>
+        <label>@Language.DueDate</label>
+        @Html.TextBoxFor(model => model.DueDate, new { @class = "txtdate" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.DueDate)
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

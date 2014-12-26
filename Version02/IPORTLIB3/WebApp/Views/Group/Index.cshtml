@@ -1,0 +1,21 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.Group>
+@{
+    ViewBag.Title = "Group";
+}
+<h2>@Language.ManageGroup</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.GroupName</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+		<td>@item.GroupName</td>
+
+        <td><a href="/Group/Edit/@item.GroupId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/Group/Delete/@item.GroupId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

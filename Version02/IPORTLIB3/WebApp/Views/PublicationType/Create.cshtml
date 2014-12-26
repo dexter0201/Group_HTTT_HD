@@ -1,0 +1,23 @@
+@using WebApp.Resources
+@model DTO.PublicationType
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/PublicationType/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.PublicationTypeName</label>
+        @Html.TextBoxFor(model => model.PublicationTypeName, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.PublicationTypeName)
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

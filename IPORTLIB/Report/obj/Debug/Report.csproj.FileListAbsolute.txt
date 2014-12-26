@@ -1,0 +1,11 @@
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\bin\Debug\Report.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\bin\Debug\Report.pdb
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\bin\Debug\DAL.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\bin\Debug\DTO.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\bin\Debug\EntityFramework.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\bin\Debug\DAL.pdb
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\bin\Debug\DTO.pdb
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\bin\Debug\EntityFramework.xml
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\obj\Debug\Report.csprojResolveAssemblyReference.cache
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\obj\Debug\Report.dll
+C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\IPORTLIB\Report\obj\Debug\Report.pdb

@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Mượn trả sách";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Mượn trả sách</h2>
+<h3>Mượn sách</h3>
+<table class="tbl">
+    <tr>
+        <td><span class="required">*</span>Mã vạch thẻ</td>
+        <td><input type="text" class="txtdate" value="00000001" /></td>
+        <td><input class="btn" type="submit" value="Kiểm tra" /></td>
+            
+        <td><span class="required">*</span>Mã vạch sách</td>
+        <td><input type="text" class="txtdate" value="00012313"/></td>
+        <td><input class="btn" type="submit" value="Kiểm tra" /></td>
+    </tr>
+</table>
+<table class="tbl">
+    <tr>
+        <td rowspan="4"><img src="/Upload/p1.png" /></td>
+        <td>Họ tên:</td>
+        <td>Nguyễn Đức Trí</td>
+        <td>Tên sách:</td>
+        <td>Từ điển Anh-Việt</td>
+    </tr>
+    <tr>
+        <td>Tiền kí quĩ:</td>
+        <td>50000</td>
+        <td>Tác giả:</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Hạn sử dụng:</td>
+        <td>31/12/2008</td>
+        <td>Nhà xuất bản:</td>
+        <td>Từ điển Bách Khoa</td>
+    </tr>
+    <tr>
+        <td>Tình trạng thẻ:</td>
+        <td colspan="3">Được mượn</td>
+    </tr>
+</table>
+
+<table class="table">
+    <tr><th>Tên sách</th><th>Mã vạch sách</th><th>Ngày mượn</th><th>Thời hạn trả</th></tr>
+    <tr>
+        <td>Từ điển Anh-Việt</td>
+        <td>00012313</td>
+        <td>27/02/2014</td>
+        <td>06/03/2014</td>
+    </tr>
+</table>
+
+<h3>Trả sách</h3>
+<table class="tbl">
+    <tr>
+        <td><span class="required">*</span>Mã vạch sách</td>
+        <td><input type="text" class="txtdate" /></td>
+        <td><input class="btn" type="submit" value="Trả sách" /></td>
+
+        <td><span class="required">*</span>Mã vạch sách</td>
+        <td><input type="text" class="txtdate" /></td>
+        <td><input class="btn" type="submit" value="Gia hạn" /></td>
+    </tr>
+</table>
+
+<table class="tbl">
+    <tr>
+        <td rowspan="4"><img src="/Upload/p1.png" /></td>
+        <td>Mã vạch thẻ thẻ:</td>
+        <td width="70%">00000001</td>
+    </tr>
+    <tr>
+        <td>Họ tên:</td>
+        <td>Nguyễn Đức Trí</td>
+    </tr>
+    <tr>
+        <td>Tiền kí quĩ:</td>
+        <td>50000</td>
+    </tr>
+    <tr>
+        <td>Hạn sử dụng:</td>
+        <td>31/12/2008</td>
+    </tr>
+</table>
+
+<table class="table">
+    <tr><th>Tên sách</th><th>Ngày mượn</th><th>Ngày gia hạn</th><th>Thời hạn trả</th><th>Số tiền phạt</th></tr>
+    <tr>
+        <td>Từ điển Anh-Việt</td>
+        <td>27/02/2014</td>
+        <td></td>
+        <td>06/03/2014</td>
+        <td>0</td>
+    </tr>
+</table>

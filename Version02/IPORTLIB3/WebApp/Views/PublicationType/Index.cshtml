@@ -1,0 +1,21 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.PublicationType>
+@{
+    ViewBag.Title = "PublicationType";
+}
+<h2>@Language.ManagePublicationType</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.PublicationTypeName</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+		<td>@item.PublicationTypeName</td>
+
+        <td><a href="/PublicationType/Edit/@item.PublicationTypeId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/PublicationType/Delete/@item.PublicationTypeId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

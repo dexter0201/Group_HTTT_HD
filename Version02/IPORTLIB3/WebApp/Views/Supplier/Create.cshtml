@@ -1,0 +1,63 @@
+@using WebApp.Resources
+@model DTO.Supplier
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/Supplier/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.SupplierName</label>
+        @Html.TextBoxFor(model => model.SupplierName, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.SupplierName)
+    </p>
+    <p>
+        <label>@Language.Address</label>
+        @Html.TextBoxFor(model => model.Address, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Address)
+    </p>
+    <p>
+        <label>@Language.Province</label>
+        @Html.DropDownList("ProvinceId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.Email</label>
+        @Html.TextBoxFor(model => model.Email, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Email)
+    </p>
+    <p>
+        <label>@Language.WebPage</label>
+        @Html.TextBoxFor(model => model.WebPage, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.WebPage)
+    </p>
+    <p>
+        <label>@Language.Phone</label>
+        @Html.TextBoxFor(model => model.Phone, new { @class = "txtavg" })    
+        @Html.ValidationMessageFor(model => model.Phone)
+    </p>
+    <p>
+        <label>@Language.AccountName</label>
+        @Html.TextBoxFor(model => model.AccountName, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.AccountName)
+    </p>
+    <p>
+        <label>@Language.BankName</label>
+        @Html.TextBoxFor(model => model.BankName, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.BankName)
+    </p>
+    <p>
+        <label>@Language.TaxCode</label>
+        @Html.TextBoxFor(model => model.TaxCode, new { @class = "txtavg" })    
+        @Html.ValidationMessageFor(model => model.TaxCode)
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

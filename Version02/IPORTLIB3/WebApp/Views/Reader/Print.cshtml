@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "In thẻ độc giả";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>In thẻ đọc giả</h2>
+<br/>
+<table class="tbl">
+    <tr>
+        <td><span class="required">*</span>Họ</td>
+        <td><input type="text" class="txtavg" /></td>
+        <td><span class="required">*</span>Tên</td>
+        <td><input type="text" class="txtavg" /></td>
+    </tr>
+    <tr>
+        <td><span class="required">*</span>Số mã vạch</td>
+        <td><input type="text" class="txtavg" /></td>
+        <td><span class="required">*</span>Nhóm</td>
+        <td><select class="choose"><option>Sinh viên</option><option>Giảng viên</option></select></td>
+    </tr>
+    <tr>
+        <td><span class="required">*</span>Mã số(SV/NV)</td>
+        <td><input type="text" class="txtavg" /></td>
+        <td><span class="required">*</span>Mã số thẻ</td>
+        <td><input type="text" class="txtavg" /></td>
+    </tr>
+    <tr>
+        <td>Từ ngày</td>
+        <td><input type="date"/></td>
+        <td>Đến ngày</td>
+        <td><input type="date"/></td>
+    </tr>
+    <tr>
+        <td><span class="required">*</span>Số dòng/trang</td>
+        <td><input type="text" class="txtavg" /></td>
+        <td>In thẻ</td>
+        <td><select class="choose"></select></td>
+    </tr>
+    <tr class="center">
+        <td colspan="4">
+            <input class="btn" type="submit" value="In thẻ" />
+            <input class="btn" type="reset" value="Nhập lại" />
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,33 @@
+@using WebApp.Resources
+@model DTO.Province
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/Province/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.Country</label>
+        @Html.DropDownList("CountryId", String.Empty)
+		<span class="required">*</span>
+    </p>
+    <p>
+        <label>@Language.ProvinceNo</label>
+        @Html.TextBoxFor(model => model.ProvinceNo, new { @class = "txtdate" })    
+        @Html.ValidationMessageFor(model => model.ProvinceNo)
+    </p>
+    <p>
+        <label>@Language.ProvinceName</label>
+        @Html.TextBoxFor(model => model.ProvinceName, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.ProvinceName)
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

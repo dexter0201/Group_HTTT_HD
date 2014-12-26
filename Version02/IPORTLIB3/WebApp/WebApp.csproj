@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BDEDB37-D18C-49E2-B26E-E5CDBB33B833}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="By1112292, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Plugins\By1112292.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OnBarcode.Barcode.ASPNET">
+      <HintPath>Plugins\OnBarcode.Barcode.ASPNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel">
+      <HintPath>..\packages\Thinktecture.IdentityModel.3.6.1\lib\net40\Thinktecture.IdentityModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\CorsConfig.cs" />
+    <Compile Include="Api\AttachmentApiController.cs" />
+    <Compile Include="Api\AttachmentTypeApiController.cs" />
+    <Compile Include="Api\AuthorApiController.cs" />
+    <Compile Include="Api\BookApiController.cs" />
+    <Compile Include="Api\CardUserApiController.cs" />
+    <Compile Include="Api\ConfigApiController.cs" />
+    <Compile Include="Api\CountryApiController.cs" />
+    <Compile Include="Api\CourseApiController.cs" />
+    <Compile Include="Api\CurrencyApiController.cs" />
+    <Compile Include="Api\DepartmentApiController.cs" />
+    <Compile Include="Api\GroupApiController.cs" />
+    <Compile Include="Api\LanguageApiController.cs" />
+    <Compile Include="Api\LoanApiController.cs" />
+    <Compile Include="Api\LoanDetailApiController.cs" />
+    <Compile Include="Api\MajorApiController.cs" />
+    <Compile Include="Api\OrderApiController.cs" />
+    <Compile Include="Api\OrderDetailApiController.cs" />
+    <Compile Include="Api\PeriodApiController.cs" />
+    <Compile Include="Api\ProvinceApiController.cs" />
+    <Compile Include="Api\PublicationApiController.cs" />
+    <Compile Include="Api\PublicationTypeApiController.cs" />
+    <Compile Include="Api\PublisherApiController.cs" />
+    <Compile Include="Api\PurchaseApiController.cs" />
+    <Compile Include="Api\PurchaseDetailApiController.cs" />
+    <Compile Include="Api\StatusApiController.cs" />
+    <Compile Include="Api\StoreApiController.cs" />
+    <Compile Include="Api\SupplierApiController.cs" />
+    <Compile Include="Api\TopicApiController.cs" />
+    <Compile Include="Api\UnitApiController.cs" />
+    <Compile Include="Api\UserApiController.cs" />
+    <Compile Include="Api\UserEnrollApiController.cs" />
+    <Compile Include="Api\HomeController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttachmentController.cs" />
+    <Compile Include="Controllers\AttachmentTypeController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CardUserController.cs" />
+    <Compile Include="Controllers\CirculationController.cs" />
+    <Compile Include="Controllers\ConfigController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\CurrencyController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\LoanController.cs" />
+    <Compile Include="Controllers\LoanDetailController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
+    <Compile Include="Controllers\MajorController.cs" />
+    <Compile Include="Controllers\ManageAccountController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\OrderDetailController.cs" />
+    <Compile Include="Controllers\PeriodController.cs" />
+    <Compile Include="Controllers\ProvinceController.cs" />
+    <Compile Include="Controllers\PublicationController.cs" />
+    <Compile Include="Controllers\PublicationTypeController.cs" />
+    <Compile Include="Controllers\PublisherController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
+    <Compile Include="Controllers\PurchaseDetailController.cs" />
+    <Compile Include="Controllers\ReaderController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Controllers\TopicController.cs" />
+    <Compile Include="Controllers\UnitController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserEnrollController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\BarcodeBase.cs" />
+    <Compile Include="Models\ExcelBase.cs" />
+    <Compile Include="Models\ExcelUserEnroll.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Mail.cs" />
+    <Compile Include="Models\MailBase.cs" />
+    <Compile Include="Models\MenuProvider.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\Search.cs" />
+    <Compile Include="Models\UtilityReportUser.cs" />
+    <Compile Include="Models\UtilityUser.cs" />
+    <Compile Include="Models\WordBase.cs" />
+    <Compile Include="Models\WordMail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Language.en-US.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Language.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Language.vi-VN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.vi-VN.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Contents\bootstrap-theme.min.css" />
+    <Content Include="Contents\bootstrap.css" />
+    <Content Include="Contents\bootstrap.min.css" />
+    <Content Include="Contents\font-awesome-4.1.0\css\font-awesome.css" />
+    <Content Include="Contents\font-awesome-4.1.0\css\font-awesome.min.css" />
+    <Content Include="Contents\font-awesome.min.css" />
+    <Content Include="Contents\main.css" />
+    <Content Include="Contents\sb-admin-2.css" />
+    <Content Include="Contents\themify-icons.min.css" />
+    <Content Include="Contents\weather-icons.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\App.js" />
+    <Content Include="Images\bootstrap.min.js" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\Delete.gif" />
+    <Content Include="Images\deleteIcon.png" />
+    <Content Include="Images\detail.png" />
+    <Content Include="Images\Edit.gif" />
+    <Content Include="Images\exporting.js" />
+    <Content Include="Images\fav-inactive.png" />
+    <Content Include="Images\fav.png" />
+    <Content Include="Images\highcharts-3d.js" />
+    <Content Include="Images\highcharts.js" />
+    <Content Include="Images\jquery-1.10.2.min.js" />
+    <Content Include="Images\jquery-1.11.1.js" />
+    <Content Include="Images\jquery-1.8.2.min.js" />
+    <Content Include="Images\jquery-ui.css" />
+    <Content Include="Images\jquery-ui.js" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\no_image.jpg" />
+    <Content Include="Images\pic\IMG_20141117_102612_webcamera360_20141117111649.jpg" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\Style.css" />
+    <Content Include="LayoutReport.xml" />
+    <Content Include="menu.xml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\ReportOutOfDateLoans.rdlc" />
+    <EmbeddedResource Include="Report\ReportUsersDepartments.rdlc" />
+    <EmbeddedResource Include="Report\ReportUsersLoan.rdlc" />
+    <EmbeddedResource Include="Resources\Language.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Language.vi-VN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.vi-VN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{6E3743AC-FDE8-42D4-B551-1E3497E27951}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{169ED9CA-7028-4C1E-BFBC-5717838E19E4}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Report\Report.csproj">
+      <Project>{30451720-ADBE-4F44-B05A-C1049B634DE2}</Project>
+      <Name>Report</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AttachmentType\Create.cshtml" />
+    <Content Include="Views\AttachmentType\Edit.cshtml" />
+    <Content Include="Views\AttachmentType\Index.cshtml" />
+    <Content Include="Views\Attachment\Create.cshtml" />
+    <Content Include="Views\Attachment\Edit.cshtml" />
+    <Content Include="Views\Attachment\Index.cshtml" />
+    <Content Include="Views\Author\Create.cshtml" />
+    <Content Include="Views\Author\Edit.cshtml" />
+    <Content Include="Views\Author\Index.cshtml" />
+    <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\Book\Edit.cshtml" />
+    <Content Include="Views\Book\Index.cshtml" />
+    <Content Include="Views\CardUser\Create.cshtml" />
+    <Content Include="Views\CardUser\Edit.cshtml" />
+    <Content Include="Views\CardUser\Index.cshtml" />
+    <Content Include="Views\Config\Create.cshtml" />
+    <Content Include="Views\Config\Edit.cshtml" />
+    <Content Include="Views\Config\Index.cshtml" />
+    <Content Include="Views\Country\Create.cshtml" />
+    <Content Include="Views\Country\Edit.cshtml" />
+    <Content Include="Views\Country\Index.cshtml" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Currency\Create.cshtml" />
+    <Content Include="Views\Currency\Edit.cshtml" />
+    <Content Include="Views\Currency\Index.cshtml" />
+    <Content Include="Views\Department\Create.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Group\Create.cshtml" />
+    <Content Include="Views\Group\Edit.cshtml" />
+    <Content Include="Views\Group\Index.cshtml" />
+    <Content Include="Views\Language\Create.cshtml" />
+    <Content Include="Views\Language\Edit.cshtml" />
+    <Content Include="Views\Language\Index.cshtml" />
+    <Content Include="Views\LoanDetail\Create.cshtml" />
+    <Content Include="Views\LoanDetail\Edit.cshtml" />
+    <Content Include="Views\LoanDetail\Index.cshtml" />
+    <Content Include="Views\Loan\Create.cshtml" />
+    <Content Include="Views\Loan\Edit.cshtml" />
+    <Content Include="Views\Loan\Index.cshtml" />
+    <Content Include="Views\Major\Create.cshtml" />
+    <Content Include="Views\Major\Edit.cshtml" />
+    <Content Include="Views\Major\Index.cshtml" />
+    <Content Include="Views\OrderDetail\Create.cshtml" />
+    <Content Include="Views\OrderDetail\Edit.cshtml" />
+    <Content Include="Views\OrderDetail\Index.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Period\Create.cshtml" />
+    <Content Include="Views\Period\Edit.cshtml" />
+    <Content Include="Views\Period\Index.cshtml" />
+    <Content Include="Views\Province\Create.cshtml" />
+    <Content Include="Views\Province\Edit.cshtml" />
+    <Content Include="Views\Province\Index.cshtml" />
+    <Content Include="Views\PublicationType\Create.cshtml" />
+    <Content Include="Views\PublicationType\Edit.cshtml" />
+    <Content Include="Views\PublicationType\Index.cshtml" />
+    <Content Include="Views\Publication\Create.cshtml" />
+    <Content Include="Views\Publication\Edit.cshtml" />
+    <Content Include="Views\Publication\Index.cshtml" />
+    <Content Include="Views\Publisher\Create.cshtml" />
+    <Content Include="Views\Publisher\Edit.cshtml" />
+    <Content Include="Views\Publisher\Index.cshtml" />
+    <Content Include="Views\PurchaseDetail\Create.cshtml" />
+    <Content Include="Views\PurchaseDetail\Edit.cshtml" />
+    <Content Include="Views\PurchaseDetail\Index.cshtml" />
+    <Content Include="Views\Purchase\Create.cshtml" />
+    <Content Include="Views\Purchase\Edit.cshtml" />
+    <Content Include="Views\Purchase\Index.cshtml" />
+    <Content Include="Views\Status\Create.cshtml" />
+    <Content Include="Views\Status\Edit.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Store\Create.cshtml" />
+    <Content Include="Views\Store\Edit.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Supplier\Create.cshtml" />
+    <Content Include="Views\Supplier\Edit.cshtml" />
+    <Content Include="Views\Supplier\Index.cshtml" />
+    <Content Include="Views\Topic\Create.cshtml" />
+    <Content Include="Views\Topic\Edit.cshtml" />
+    <Content Include="Views\Topic\Index.cshtml" />
+    <Content Include="Views\Unit\Create.cshtml" />
+    <Content Include="Views\Unit\Edit.cshtml" />
+    <Content Include="Views\Unit\Index.cshtml" />
+    <Content Include="Views\UserEnroll\Create.cshtml" />
+    <Content Include="Views\UserEnroll\Edit.cshtml" />
+    <Content Include="Views\UserEnroll\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\_PartialTop.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\ManageAccount\Edit.cshtml" />
+    <Content Include="Views\ManageAccount\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Mail\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Course\Import.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Circulation\CheckOut.cshtml" />
+    <Content Include="Views\Circulation\DetailLoan.cshtml" />
+    <Content Include="Views\Circulation\Index.cshtml" />
+    <Content Include="Views\Circulation\LoanMonitoring.cshtml" />
+    <Content Include="Views\Circulation\ReportOutOfDateLoans.cshtml" />
+    <Content Include="Views\Circulation\Role.cshtml" />
+    <Content Include="Views\Circulation\StatisticBook.cshtml" />
+    <Content Include="Views\Circulation\StatisticReader.cshtml" />
+    <Content Include="Views\Reader\Create.cshtml" />
+    <Content Include="Views\Reader\Edit.cshtml" />
+    <Content Include="Views\Reader\ImageManage.cshtml" />
+    <Content Include="Views\Reader\Index.cshtml" />
+    <Content Include="Views\Reader\Print.cshtml" />
+    <Content Include="Views\Reader\Report.cshtml" />
+    <Content Include="Views\Reader\ReportResult.cshtml" />
+    <Content Include="Views\Reader\Result.cshtml" />
+    <Content Include="Views\Reader\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Menu\Breadcrumb.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Contents\css" />
+    <None Include="Contents\font-awesome-4.1.0\fonts\fontawesome-webfont.eot" />
+    <None Include="Contents\font-awesome-4.1.0\fonts\fontawesome-webfont.svg" />
+    <None Include="Contents\font-awesome-4.1.0\fonts\fontawesome-webfont.ttf" />
+    <None Include="Contents\font-awesome-4.1.0\fonts\fontawesome-webfont.woff" />
+    <None Include="Contents\font-awesome-4.1.0\fonts\FontAwesome.otf" />
+    <None Include="Contents\font-awesome-4.1.0\less\bordered-pulled.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\core.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\fixed-width.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\font-awesome.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\icons.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\larger.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\list.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\mixins.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\path.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\rotated-flipped.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\spinning.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\stacked.less" />
+    <None Include="Contents\font-awesome-4.1.0\less\variables.less" />
+    <None Include="Contents\font-awesome-4.1.0\scss\font-awesome.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_bordered-pulled.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_core.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_fixed-width.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_icons.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_larger.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_list.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_mixins.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_path.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_rotated-flipped.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_spinning.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_stacked.scss" />
+    <None Include="Contents\font-awesome-4.1.0\scss\_variables.scss" />
+    <Content Include="Views\ManageAccount\ManageRole.cshtml" />
+    <Content Include="Views\ManageAccount\EditRole.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1590</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

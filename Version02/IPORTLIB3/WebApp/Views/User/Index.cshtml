@@ -1,0 +1,23 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.User>
+@{
+    ViewBag.Title = "User";
+}
+<h2>@Language.ManageUser</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.UserNo</th><th>@Language.FirstName</th><th>@Language.LastName</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+		<td>@item.UserNo</td>
+		<td>@item.FirstName</td>
+		<td>@item.LastName</td>
+
+        <td><a href="/User/Edit/@item.UserId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/User/Delete/@item.UserId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

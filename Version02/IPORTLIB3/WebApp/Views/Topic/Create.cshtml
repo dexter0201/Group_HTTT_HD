@@ -1,0 +1,28 @@
+@using WebApp.Resources
+@model DTO.Topic
+@{
+    ViewBag.Title = Language.Create;
+}
+<h2>@Language.Create</h2>
+<form method="post" action="/Topic/Create" class="frm">
+    @Html.ValidationSummary(true)
+    <p>
+        <label>@Language.TopicName</label>
+        @Html.TextBoxFor(model => model.TopicName, new { @class = "txtlarge" })
+		<span class="required">*</span>   
+        @Html.ValidationMessageFor(model => model.TopicName)
+    </p>
+    <p>
+        <label>@Language.Note</label>
+        @Html.TextBoxFor(model => model.Note, new { @class = "txtlarge" })    
+        @Html.ValidationMessageFor(model => model.Note)
+    </p>
+
+	<p>
+        <label>&nbsp;</label>
+        <input type="submit" value="@Language.Save" class="btn" />
+    </p>
+</form>
+<div>
+    @Html.ActionLink(Language.BackToList, "Index")
+</div>

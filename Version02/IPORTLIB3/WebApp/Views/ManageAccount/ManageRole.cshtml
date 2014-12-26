@@ -1,0 +1,25 @@
+﻿@using WebApp.Resources;
+@using WebApp.Resources
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = Language.ManageRole;    
+}
+<h2>@Language.ManageRole</h2>
+<form class="frm" method="post" action="/ManageAccount/AddRole">
+    <p>
+        <label>RoleName</label>
+        <input type="text" name="RoleName" id="RoleName" />
+    </p>
+    <p><label>&nbsp;</label><input type="submit" value="Save" /></p>
+</form>
+<table class="table">
+<tr><th>@Language.RoleName</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item</td>
+        <td><a href="/ManageAccount/EditRole/@item"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/ManageAccount/DeleteRole/@item"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

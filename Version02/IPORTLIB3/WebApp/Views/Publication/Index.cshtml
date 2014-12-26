@@ -1,0 +1,24 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.Publication>
+@{
+    ViewBag.Title = "Publication";
+}
+<h2>@Language.ManagePublication</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.Title</th><th>@Language.PublisherYear</th><th>@Language.Price</th><th>@Language.Quantity</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+		<td>@item.Title</td>
+		<td>@item.PublisherYear</td>
+		<td>@item.Price</td>
+		<td>@item.Quantity</td>
+
+        <td><a href="/Publication/Edit/@item.PublicationId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/Publication/Delete/@item.PublicationId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

@@ -1,0 +1,23 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.Config>
+@{
+    ViewBag.Title = "Config";
+}
+<h2>@Language.ManageConfig</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.ConfigName</th><th>@Language.DataType</th><th>@Language.Value</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+		<td>@item.ConfigName</td>
+		<td>@item.DataType</td>
+		<td>@item.Value</td>
+
+        <td><a href="/Config/Edit/@item.ConfigId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/Config/Delete/@item.ConfigId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

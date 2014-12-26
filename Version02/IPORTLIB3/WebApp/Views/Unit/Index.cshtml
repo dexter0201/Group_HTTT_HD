@@ -1,0 +1,21 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.Unit>
+@{
+    ViewBag.Title = "Unit";
+}
+<h2>@Language.ManageUnit</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.UnitName</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+		<td>@item.UnitName</td>
+
+        <td><a href="/Unit/Edit/@item.UnitId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/Unit/Delete/@item.UnitId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>

@@ -1,0 +1,21 @@
+@using WebApp.Resources
+@model IEnumerable<DTO.Province>
+@{
+    ViewBag.Title = "Province";
+}
+<h2>@Language.ManageProvince</h2>
+<p>
+    @Html.ActionLink(Language.CreateNew, "Create")
+</p>
+<table class="table">
+    <tr><th>@Language.ProvinceName</th><th class="colsmall">@Language.Edit</th><th class="colsmall">@Language.Delete</th></tr>
+@foreach (var item in Model)
+{
+    <tr>
+		<td>@item.ProvinceName</td>
+
+        <td><a href="/Province/Edit/@item.ProvinceId"><img src="/Images/Edit.gif" alt="Edit" /></a></td>
+        <td><a href="/Province/Delete/@item.ProvinceId"><img src="/Images/Delete.gif" alt="Delete" /></a></td>
+    </tr>
+}
+</table>
