@@ -1,9 +1,10 @@
 using System;
 using System.Data.SqlClient;
 using System.Data;
-using IDAL;
 using DTO;
 using System.Collections.Generic;
+using IDAL;
+
 namespace DAL
 {
 	public class AttachmentRepository : Repository<Attachment>, IAttachmentRepository
@@ -48,7 +49,12 @@ namespace DAL
 		}
 		protected override Attachment GetFromReader(SqlDataReader reader)
 		{
-			return new Attachment { AttachmentId = (int)reader["AttachmentId"], Url = (string)reader["Url"], AttachmentTypeId = (int)reader["AttachmentTypeId"], UserNo = reader["UserNo"] == DBNull.Value ? null : reader["UserNo"].ToString() };
+			return new Attachment {
+				AttachmentId = (int)reader["AttachmentId"],
+				Url = (string)reader["Url"],
+				AttachmentTypeId = (int)reader["AttachmentTypeId"],
+				UserNo = reader["UserNo"] == DBNull.Value ? null : reader["UserNo"].ToString()
+			};
 		}
 
         // ================================

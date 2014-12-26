@@ -1,8 +1,0 @@
-D:\HK7\PTHTTT\IPORTLIB3\DTO\bin\Debug\DTO.dll
-D:\HK7\PTHTTT\IPORTLIB3\DTO\bin\Debug\DTO.pdb
-D:\HK7\PTHTTT\IPORTLIB3\DTO\obj\Debug\DTO.dll
-D:\HK7\PTHTTT\IPORTLIB3\DTO\obj\Debug\DTO.pdb
-C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\DTO\bin\Debug\DTO.dll
-C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\DTO\bin\Debug\DTO.pdb
-C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\DTO\obj\Debug\DTO.dll
-C:\Users\Kalel\Dropbox\Working\HTTT_HD\Group_HTTT_HD\Version02\IPORTLIB3\DTO\obj\Debug\DTO.pdb

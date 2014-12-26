@@ -254,7 +254,7 @@ namespace BLL
             get
             {
                 if (_attachment == null)
-                    _attachment = new AttachmentProvider((IAttachmentRepository)GetType("attachment"));
+					_attachment = new AttachmentProvider((IAttachmentRepository)GetType("attachment"));
                 return _attachment;
             }
         }

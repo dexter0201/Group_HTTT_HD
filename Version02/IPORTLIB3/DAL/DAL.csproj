@@ -81,7 +81,7 @@
       <Name>DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\IDAL\IDAL.csproj">
-      <Project>{F2E9AD9A-1316-4ED1-B6E1-F73D077DC986}</Project>
+      <Project>{f2e9ad9a-1316-4ed1-b6e1-f73d077dc986}</Project>
       <Name>IDAL</Name>
     </ProjectReference>
   </ItemGroup>
