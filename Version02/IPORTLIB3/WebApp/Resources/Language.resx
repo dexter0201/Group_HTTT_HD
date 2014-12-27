@@ -312,4 +312,10 @@
   <data name="RoleName" xml:space="preserve">
     <value>RoleName</value>
   </data>
+  <data name="ManageAttachment" xml:space="preserve">
+    <value>ManageAttachment</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
 </root>

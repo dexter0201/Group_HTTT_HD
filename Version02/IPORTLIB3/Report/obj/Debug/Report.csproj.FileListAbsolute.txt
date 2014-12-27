@@ -1,0 +1,14 @@
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\bin\Debug\Report.dll
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\bin\Debug\Report.pdb
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\bin\Debug\BLL.dll
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\bin\Debug\By1112292.dll
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\bin\Debug\DTO.dll
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\bin\Debug\IDAL.dll
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\bin\Debug\BLL.pdb
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\bin\Debug\DTO.pdb
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\bin\Debug\IDAL.pdb
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\obj\Debug\Report.csprojResolveAssemblyReference.cache
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\obj\Debug\RdlCompile.cache
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\obj\Debug\RdlCompile.compiled
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\obj\Debug\Report.dll
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\Report\obj\Debug\Report.pdb

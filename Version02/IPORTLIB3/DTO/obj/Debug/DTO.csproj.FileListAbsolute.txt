@@ -1,0 +1,4 @@
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\DTO\bin\Debug\DTO.dll
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\DTO\bin\Debug\DTO.pdb
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\DTO\obj\Debug\DTO.dll
+C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\DTO\obj\Debug\DTO.pdb
