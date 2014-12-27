@@ -10,6 +10,7 @@ namespace DTO
 		public int GroupId { get; set; }
 		public int? AttachmentId { get; set; }
 		public string UserNo { get; set; }
+        public string Url { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public bool? Gender { get; set; }

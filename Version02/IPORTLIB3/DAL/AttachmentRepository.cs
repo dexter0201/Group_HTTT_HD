@@ -43,8 +43,8 @@ namespace DAL
 		}
 		protected override void SetParam(SqlCommand cmd, Attachment obj)
 		{
-			cmd.Parameters.Add("@Url", SqlDbType.NVarChar).Value = obj.Url;
-			cmd.Parameters.Add("@AttachmentTypeId", SqlDbType.Int).Value = obj.AttachmentTypeId;
+            //cmd.Parameters.Add("@Url", SqlDbType.NVarChar).Value = obj.Url;
+            //cmd.Parameters.Add("@AttachmentTypeId", SqlDbType.Int).Value = obj.AttachmentTypeId;
 
 		}
 		protected override Attachment GetFromReader(SqlDataReader reader)
@@ -53,7 +53,8 @@ namespace DAL
 				AttachmentId = (int)reader["AttachmentId"],
 				Url = (string)reader["Url"],
 				AttachmentTypeId = (int)reader["AttachmentTypeId"],
-				UserNo = reader["UserNo"] == DBNull.Value ? null : reader["UserNo"].ToString()
+				//UserNo = reader["UserNo"] == DBNull.Value ? null : reader["UserNo"].ToString()
+                UserNo = reader.GetSchemaTable().Select("ColumnName='UserNo'").Length > 0 && reader["UserNo"].ToString() != "" ? (string)reader["UserNo"] : "Unknown"
 			};
 		}
 
@@ -90,11 +91,11 @@ namespace DAL
             cmd.Parameters.Add("@AttachmentId", SqlDbType.Int).Direction = ParameterDirection.Output;
             cmd.Parameters.Add("@AttachmentTypeId", SqlDbType.Int).Value = attachment.AttachmentTypeId;
             cmd.Parameters.Add("@Url", SqlDbType.NVarChar).Value = attachment.Url;
-            int ret = cmd.ExecuteNonQuery();
-            if (ret > 0)
-            {
-                attachment.AttachmentId = (int)cmd.Parameters["@AttachmentId"].Value;
-            }
+            //int ret = cmd.ExecuteNonQuery();
+            //if (ret > 0)
+            //{
+            //    attachment.AttachmentId = (int)cmd.Parameters["@AttachmentId"].Value;
+            //}
         }
 
 

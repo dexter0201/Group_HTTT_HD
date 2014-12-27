@@ -13,9 +13,10 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = cn;
+                cn.Open();
                 SetInsertParam(cmd, obj);
                 SetParam(cmd, obj);
-                cn.Open();
                 int ret = cmd.ExecuteNonQuery();
                 if (ret > 0)
                 {

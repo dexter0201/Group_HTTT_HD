@@ -58,6 +58,7 @@ namespace WebApp.Controllers
 			return RedirectToAction("Index");
 		}
 
+        [HttpPost]
 		public JsonResult Upload(Attachment attachment)
 		{
 			HttpPostedFileBase file = Request.Files[0];
