@@ -30,3 +30,15 @@ CREATE PROCEDURE DeleteUserByID
 AS
 	DELETE Users WHERE UserId = @UserId	
 GO
+
+CREATE PROCEDURE GetUserById
+(
+	@UserId int
+)
+as
+	Select UserId, Departments.DepartmentId, Departments.DepartmentName, ProvinceId, GroupId, Users.AttachmentId, UserNo, FirstName,
+			LastName, Gender, BirthDay, Address, Phone, IdentityCard, Attachments.Url, Email
+	from Users join Departments on Departments.DepartmentId = Users.DepartmentId
+				left join Attachments on Users.AttachmentId = Attachments.AttachmentId
+	where UserId = @UserId;
+go

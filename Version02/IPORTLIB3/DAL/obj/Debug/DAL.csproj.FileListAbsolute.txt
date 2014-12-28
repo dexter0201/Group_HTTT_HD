@@ -1,5 +1,0 @@
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\WebApp\Plugins\DAL.dll
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\WebApp\Plugins\DAL.pdb
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\DAL\obj\Debug\DAL.dll
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\DAL\obj\Debug\DAL.pdb

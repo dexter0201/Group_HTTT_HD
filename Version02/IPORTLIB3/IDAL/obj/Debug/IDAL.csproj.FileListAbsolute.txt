@@ -1,7 +1,0 @@
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\IDAL\bin\Debug\IDAL.dll
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\IDAL\bin\Debug\IDAL.pdb
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\IDAL\bin\Debug\DTO.dll
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\IDAL\bin\Debug\DTO.pdb
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\IDAL\obj\Debug\IDAL.csprojResolveAssemblyReference.cache
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\IDAL\obj\Debug\IDAL.dll
-C:\Users\QuanSu\Desktop\working\dotNET\Group_HTTT_HD\Version02\IPORTLIB3\IDAL\obj\Debug\IDAL.pdb

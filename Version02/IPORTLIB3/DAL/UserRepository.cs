@@ -61,7 +61,23 @@ namespace DAL
 		}
 		protected override User GetFromReader(SqlDataReader reader)
 		{
-			return new User { UserId = (int)reader["UserId"], DepartmentId = (int)reader["DepartmentId"], ProvinceId = reader["ProvinceId"] == DBNull.Value ? null : (int?)reader["ProvinceId"], GroupId = (int)reader["GroupId"], AttachmentId = reader["AttachmentId"] == DBNull.Value ? null : (int?)reader["AttachmentId"], UserNo = (string)reader["UserNo"], FirstName = (string)reader["FirstName"], LastName = (string)reader["LastName"], Gender = reader["Gender"] == DBNull.Value ? null : (bool?)reader["Gender"], BirthDay = reader["BirthDay"] == DBNull.Value ? DateTime.Now : (DateTime)reader["BirthDay"], Address = reader["Address"] == DBNull.Value ? null : (string)reader["Address"], Phone = reader["Phone"] == DBNull.Value ? null : (string)reader["Phone"], IdentityCard = reader["IdentityCard"] == DBNull.Value ? null : (string)reader["IdentityCard"], Email = reader["Email"] == DBNull.Value ? null : (string)reader["Email"] };
+			return new User {
+                UserId = (int)reader["UserId"],
+                DepartmentId = reader["DepartmentId"].ToString() != "" ? (int)reader["DepartmentId"] : -1,
+                ProvinceId = reader["ProvinceId"] == DBNull.Value ? null : (int?)reader["ProvinceId"],
+                GroupId = (int)reader["GroupId"],
+                AttachmentId = reader["AttachmentId"] == DBNull.Value ? null : (int?)reader["AttachmentId"],
+                UserNo = (string)reader["UserNo"],
+                Url = reader.GetSchemaTable().Select("ColumnName='Url'").Length > 0 && reader["Url"].ToString() != "" ? (string)reader["Url"] : "",
+                FirstName = (string)reader["FirstName"],
+                LastName = (string)reader["LastName"],
+                Gender = reader["Gender"] == DBNull.Value ? null : (bool?)reader["Gender"],
+                BirthDay = reader["BirthDay"] == DBNull.Value ? DateTime.Now : (DateTime)reader["BirthDay"],
+                Address = reader["Address"] == DBNull.Value ? null : (string)reader["Address"],
+                Phone = reader["Phone"] == DBNull.Value ? null : (string)reader["Phone"],
+                IdentityCard = reader["IdentityCard"] == DBNull.Value ? null : (string)reader["IdentityCard"],
+                Email = reader["Email"] == DBNull.Value ? null : (string)reader["Email"]
+            };
 		}
         /* -------- Report Users -----------*/
         public List<ReportUsersLoan> ReportUsersLoan()

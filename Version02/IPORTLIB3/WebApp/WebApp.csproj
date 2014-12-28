@@ -269,7 +269,9 @@
     <Content Include="Images\Style.css" />
     <Content Include="LayoutReport.xml" />
     <Content Include="menu.xml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
